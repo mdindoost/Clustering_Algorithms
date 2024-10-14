@@ -79,20 +79,25 @@ module load gcc
 ## Usage
 After building, you can run the application to perform clustering on a sample graph (e.g., Zachary's Karate Club):
 
-Option 1: Run from the Project Root
+** Option 1:** Run from the Project Root
+```bash
 
 ./build/src/clustering_app
-
-Option 2: Run from the Build Directory
+```
+** Option 2:** Run from the Build Directory
+```bash
 
 cd build
 ./src/clustering_app
-Note: If you encounter any library-related errors, ensure that the LD_LIBRARY_PATH environment variable includes the paths to the libraries:
+```
+**Note:** If you encounter any library-related errors, ensure that the LD_LIBRARY_PATH environment variable includes the paths to the libraries:
 
+```bash
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/igraph/install/lib64:$(pwd)/libleidenalg/install/lib
+```
 
-Contributing
+## Contributing
 Contributions are welcome! If you would like to contribute to this project, please follow these steps:
 
 Fork the Repository: Create a personal fork of the repository on GitHub.
@@ -103,12 +108,12 @@ Push to Your Fork: Push your changes to your fork on GitHub.
 Submit a Pull Request: Open a pull request to the main repository.
 Please ensure that your code adheres to the project's coding standards and includes appropriate documentation.
 
-License
+### License
 This project is licensed under the GNU General Public License v3.0.
 
-Acknowledgments
-igraph: The project uses the igraph library for graph manipulation.
-libleidenalg: The Leiden algorithm implementation is provided by libleidenalg.
+### Acknowledgments
+**igraph:** The project uses the igraph library for graph manipulation.
+**libleidenalg:** The Leiden algorithm implementation is provided by libleidenalg.
 V.A. Traag: Author of the Leiden algorithm and libleidenalg.
 Community: Thanks to everyone who has contributed to the open-source libraries used in this project.
 Contact Information
