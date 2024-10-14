@@ -79,22 +79,40 @@ module load gcc
 ## Usage
 After building, you can run the application to perform clustering on a sample graph (e.g., Zachary's Karate Club):
 
-** Option 1:** Run from the Project Root
+Explanation and Instructions
+##1. Configuration Options
+The program supports the following configuration options:
+
+**Resolution Parameter** (```--resolution``` or ```-r```): Controls the granularity of the communities. Higher values lead to smaller communities.
+
+  **Partition Type** (``` --partition``` or ``` -p```): Selects the type of partition to use. Options are:
+
+- CPM (default)
+- RBConfiguration
+- Modularity
+
+**Random Seed** (```--seed``` or ```-s```): Sets the seed for random number generation to ensure reproducibility.
+
+**Iterations** (```--iterations``` or ```-i```): Specifies the number of iterations for the Leiden algorithm. Use -1 to run until convergence (default).
+
+##2. Command-Line Arguments
+The program accepts command-line arguments to set the configuration options. For example:
+
 ```bash
 
-./build/src/clustering_app
+./build/src/clustering_app --resolution 0.5 --partition Modularity --seed 123 --iterations 10
 ```
-** Option 2:** Run from the Build Directory
+Or using the shorthand options:
+
 ```bash
 
-cd build
-./src/clustering_app
+./build/src/clustering_app -r 0.5 -p Modularity -s 123 -i 10
 ```
 **Note:** If you encounter any library-related errors, ensure that the LD_LIBRARY_PATH environment variable includes the paths to the libraries:
 
 ```bash
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/igraph/install/lib64:$(pwd)/libleidenalg/install/lib
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/igraph/install/lib64:$(pwd)/libleidenalg/install/lib64
 ```
 
 ## Contributing
