@@ -42,31 +42,41 @@ Clone the repository along with its submodules:
 ```bash
 git clone --recurse-submodules https://github.com/mdindoost/Clustering_Algorithms.git
 cd Clustering_Algorithms
-
+```
 If you have already cloned the repository without submodules, initialize them:
 ```bash
 git submodule update --init --recursive
+```
 
-2. Run the Build Script
+### 2. Run the Build Script
 Make sure the build.sh script has execute permissions:
 
+```bash
 
 chmod +x build.sh
+```
+
 Execute the build script:
+```bash
 
 ./build.sh
-Note: If you need to rebuild dependencies (igraph and libleidenalg), run:
+```
 
+**Note:** If you need to rebuild dependencies (igraph and libleidenalg), run:
+
+```bash
 
 ./build.sh --rebuild-deps
-3. Load Necessary Modules (If Applicable)
+```
+### 3. Load Necessary Modules (If Applicable)
 If you're on a system that uses environment modules (e.g., a computing cluster like Kruskal), you may need to load modules before building:
 
+```bash
 
 module load cmake
 module load gcc
-
-Usage
+```
+## Usage
 After building, you can run the application to perform clustering on a sample graph (e.g., Zachary's Karate Club):
 
 Option 1: Run from the Project Root
