@@ -5,6 +5,5 @@ project(Clustering_Algorithms)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Add subdirectory
+# Add the subdirectory containing your source files
 add_subdirectory(src)
-

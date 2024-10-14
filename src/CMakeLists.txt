@@ -1,3 +1,5 @@
+# src/CMakeLists.txt
+
 # Include directories for igraph and libleidenalg
 include_directories(
     ${CMAKE_SOURCE_DIR}/igraph/install/include
@@ -18,4 +20,3 @@ target_link_libraries(clustering_app
     igraph
     libleidenalg
 )
-

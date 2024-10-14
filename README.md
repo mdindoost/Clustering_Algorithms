@@ -40,14 +40,14 @@ The Clustering Algorithms Project provides a framework for performing community 
 Clone the repository along with its submodules:
 
 ```bash
-git clone --recurse-submodules https://github.com/mdindoost/Clustering_Algorithms.git
+"git clone --recurse-submodules https://github.com/mdindoost/Clustering_Algorithms.git"
 cd Clustering_Algorithms
 
 If you have already cloned the repository without submodules, initialize them:
 
 git submodule update --init --recursive
 
-2. Run the Build Script
+### 2. Run the Build Script
 Make sure the build.sh script has execute permissions:
 
 
