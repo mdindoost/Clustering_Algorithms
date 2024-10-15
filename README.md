@@ -20,8 +20,8 @@ The Clustering Algorithms Project provides a framework for performing community 
 
 ## Features
 
-- **Leiden Algorithm Implementation**: Efficient community detection using the Leiden algorithm.
-- **Graph Creation**: Supports custom graph creation using `igraph`.
+- **Leiden Algorithm Implementation**: Efficient community detection using the `Leiden algorithm 0.11.1`.
+- **Graph Creation**: Supports custom graph creation using `igraph 10.13`.
 - **Automated Build Script**: Simplifies the build process with a single script.
 - **Modular Codebase**: Easy to extend and modify for custom applications.
 
@@ -30,7 +30,7 @@ The Clustering Algorithms Project provides a framework for performing community 
 - **Operating System**: Linux or macOS (the build script is designed for Unix-like systems).
 - **Git**: Version control system to clone the repository.
 - **CMake**: Version 3.5 or higher.
-- **C++ Compiler**: Supporting C++11 (e.g., GCC or Clang).
+- **C++ Compiler**: Supporting C++17 (e.g., GCC or Clang).
 - **Shell**: Ability to run shell scripts (`bash`).
 
 ## Installation
