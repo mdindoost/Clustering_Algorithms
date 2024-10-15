@@ -11,7 +11,7 @@
 #include <stdexcept>
 #include <set>
 #include <vector>
-#include <iostream> // For debugging and logging
+#include <iostream> // I had some weired errors and warnings. chatgpt said include it for debugging and logging
 
 using namespace std;
 
@@ -40,8 +40,9 @@ void runLeiden(int64_t partition_arr[],
               int iterations,
               const vector<int64_t>& original_node_ids) {
     try {
-        cout << "Starting runLeiden..." << endl;
+        cout << "********Starting runLeiden..." << endl;
 
+        // TO Oliver: If we move these checks to Arachne we don't need them
         // 1. Validate Input Sizes
         cout << "Validating input sizes..." << endl;
         if (original_node_ids.size() != static_cast<size_t>(n)) {
@@ -50,7 +51,8 @@ void runLeiden(int64_t partition_arr[],
         if (src == nullptr || dst == nullptr) {
             throw invalid_argument("Source and destination arrays must not be null.");
         }
-
+        // TO Oliver
+        // IMPORTANT: if we keep all the nodes wee don't need it but if we want to remove singleton here! we need
         // 2. Create Node ID Mappings
         cout << "Creating node ID mappings..." << endl;
         map<int64_t, int64_t> original_to_internal_map;
@@ -58,7 +60,7 @@ void runLeiden(int64_t partition_arr[],
             original_to_internal_map[original_node_ids[i]] = i;
         }
 
-        // 3. Set the Attribute Table BEFORE any graph operations
+        // 3. Set the Attribute Table BEFORE any graph based operations
         cout << "Setting attribute table..." << endl;
         igraph_set_attribute_table(&igraph_cattribute_table);
 
@@ -69,7 +71,8 @@ void runLeiden(int64_t partition_arr[],
 
         // 5. Add Vertices to the Graph
         cout << "Adding vertices..." << endl;
-        igraph_add_vertices(&graph, n, 0); // Adds 'n' vertices with no attributes
+        // To Oliver please confirm // Adds 'n' vertices with no attributes. n passed from Arachne.
+        igraph_add_vertices(&graph, n, 0);  
 
         // 6. Prepare and Add Edge List (0-Based Indexing)
         cout << "Preparing edge list..." << endl;
@@ -106,7 +109,7 @@ void runLeiden(int64_t partition_arr[],
             VECTOR(weight_vector)[i] = 1.0;
         }
 
-        // Optionally, print the weight vector for debugging
+        // Weight vector for debugging
         /*
         for(int64_t i = 0; i < m; ++i) {
             cout << "Edge " << i << " weight: " << VECTOR(weight_vector)[i] << endl;
@@ -123,47 +126,27 @@ void runLeiden(int64_t partition_arr[],
         }
         cout << "Edge weights assigned successfully." << endl;
 
-        // 8. Graph Integrity Checks (Optional but Recommended)
         cout << "Verifying graph integrity..." << endl;
 
-        // a. Number of Vertices and Edges
         cout << "Number of vertices: " << igraph_vcount(&graph) << endl;
         cout << "Number of edges: " << igraph_ecount(&graph) << endl;
 
-        // b. List All Edges with Their Connections
-        /*
-        cout << "Listing all edges:" << endl;
-        for(int64_t i = 0; i < igraph_ecount(&graph); ++i){
-            igraph_integer_t from = 0, to = 0;
-            igraph_edge(&graph, i, &from, &to);
-            cout << "Edge " << i << ": " << from << " - " << to << endl;
-        }
-        */
 
-        // c. Verify Edge Weights
-        /*
-        cout << "Verifying edge weights:" << endl;
-        for(int64_t i = 0; i < igraph_ecount(&graph); ++i){
-            double weight = igraph_cattribute_EAN(&graph, "weight", i);
-            cout << "Edge " << i << " weight: " << weight << endl;
-        }
-        */
-
-        // 9. Initialize Leiden GraphHelper
+        // 8. Leiden GraphHelper
         cout << "Initializing Leiden GraphHelper..." << endl;
         unique_ptr<Graph> leidenGraph = make_unique<Graph>(&graph);
         if (!leidenGraph) {
             igraph_destroy(&graph);
-            throw runtime_error("Failed to create Graph object for Leiden algorithm.");
+            throw runtime_error("Failed to create Graph object for Leiden!");
         }
-        cout << "Leiden GraphHelper initialized." << endl;
+        cout << "Leiden GraphHelper is ready." << endl;
 
-        // 10. Initialize the Optimiser
+        // 9. Optimiser
         cout << "Initializing Optimiser..." << endl;
         Optimiser optimiser;
         optimiser.set_rng_seed(randomSeed); // Set random seed for reproducibility
 
-        // 11. Initialize the Appropriate Partition Type
+        // 10. Initialize the Appropriate Partition Type
         cout << "Initializing partition type: " << partitionType << endl;
         unique_ptr<MutableVertexPartition> partition;
         if (partitionType == "CPM") {
@@ -178,7 +161,7 @@ void runLeiden(int64_t partition_arr[],
         }
         cout << "Partition initialized." << endl;
 
-        // 12. Optimize the Partition
+        // 11. Starting optimization
         cout << "Starting optimization..." << endl;
         if (iterations > 0) {
             for(int i = 0; i < iterations; ++i) {
@@ -197,14 +180,14 @@ void runLeiden(int64_t partition_arr[],
                 cout << "Optimization iteration " << (++iter) << ", improvement: " << improvement << endl;
                 if(improvement == 0.0) {
                     cout << "Convergence achieved after " << iter << " iterations." << endl;
-                    break; // Convergence achieved
+                    break; // Convergence happened
                 }
             }
         }
         cout << "Optimization completed." << endl;
 
-        // 13. Retrieve Cluster Memberships
-        cout << "Retrieving cluster memberships..." << endl;
+        // 12. Cluster Memberships
+        cout << "Cluster memberships..." << endl;
         map<int64_t, int64_t> cluster_map;
         igraph_eit_t eit_partition;
         igraph_eit_create(&graph, igraph_ess_all(IGRAPH_EDGEORDER_ID), &eit_partition);
@@ -212,8 +195,7 @@ void runLeiden(int64_t partition_arr[],
 
         while (!IGRAPH_EIT_END(eit_partition)) {
             igraph_integer_t current_edge = IGRAPH_EIT_GET(eit_partition);
-            
-            // Retrieve the source and target vertices of the current edge
+            // src and dst
             igraph_integer_t from_node, to_node;
             igraph_edge(&graph, current_edge, &from_node, &to_node);
 
@@ -232,7 +214,8 @@ void runLeiden(int64_t partition_arr[],
         igraph_eit_destroy(&eit_partition);
         cout << "Cluster memberships retrieved." << endl;
 
-        // 14. Ensure All Nodes, Including Isolated Ones, Are Included in the Cluster Map
+        // IMPORTANT
+        // 13. Ensure All Nodes, Including Isolated Ones, Are Included in the Cluster Map
         cout << "Ensuring all nodes are in cluster map..." << endl;
         for(int64_t v = 0; v < igraph_vcount(&graph); ++v) {
             if(cluster_map.find(v) == cluster_map.end()) {
@@ -241,7 +224,7 @@ void runLeiden(int64_t partition_arr[],
         }
         cout << "All nodes are included in cluster map." << endl;
 
-        // 15. Map Cluster Assignments Back to Original Node IDs
+        // 14. Map Cluster Assignments Back to Original Node IDs
         cout << "Mapping cluster assignments back to original node IDs..." << endl;
         for(int64_t i = 0; i < n; ++i) {
             int64_t original_node_id = original_node_ids[i];
@@ -255,6 +238,6 @@ void runLeiden(int64_t partition_arr[],
         igraph_destroy(&graph);
         cout << "runLeiden completed successfully." << endl;
     } catch (const std::exception &e) {
-        cerr << "Exception in runLeiden: " << e.what() << endl;
+        cerr << "Exception happened in runLeiden: " << e.what() << endl;
     }
 }

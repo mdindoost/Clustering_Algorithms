@@ -1,4 +1,4 @@
-// runLeiden.h
+// runLeiden.h // it is ready to add to Arachne
 #ifndef RUNLEIDEN_H
 #define RUNLEIDEN_H
 

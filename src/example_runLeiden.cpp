@@ -54,7 +54,7 @@ int main() {
         31, 31, // Node 31 connections
         32, 32, // Node 32 connections
         33, 33, // Node 33 connections
-        34 // Node 34 connections (isolated or connected as per the dataset)
+        34 // Node 34 connections (isolated or/and connected ??????)
     };
 
     int64_t dst[] = {
@@ -90,14 +90,14 @@ int main() {
         32, 33, // Node 31 connections
         33, 34, // Node 32 connections
         34, // Node 33 connections
-        // Node 34 is assumed to be connected to node 33 if applicable
+        // Node 34 is assumed to be connected to node 33. TO Oliver help lol
     };
 
 
 
     // Define the original node IDs ordered by internal node IDs (0 to n-1)
-    // For this example, internal node ID 0 corresponds to original node ID 1, and so on.
     
+    //TO OLiver: If we had not this case that the passed graph began with anything rather than 0 ignore it
     
     //std::vector<int64_t> original_node_ids = {1, 2, 3, 4, 5};
     std::vector<int64_t> original_node_ids;
@@ -105,17 +105,19 @@ int main() {
         original_node_ids.push_back(i);
     }
 
-    // Initialize the partition array (output)
-    // Size should be equal to n, and the i-th element corresponds to the i-th original node ID
+    // To Oliver: Initialize the partition array (output)- it can be both input and output as previous function
+    // Size should be equal to n, and the i-th element corresponds to the ith original node ID
     //To OLIVER: I did it here for check but I think we should do it from **inside Arachne**. not here. 
+
     int64_t partition_arr[n];
     for(int64_t i = 0; i < n; ++i) {
-        partition_arr[i] = 0; // Initialize all partitions to 0
+        partition_arr[i] = 0; // Initialize all partitions to 0 or -1? right now we have no partition/cluster but 
+        //it should be 0 index!!!!!!!!!!!!!!!
     }
     // Define clustering parameters
     //std::string partitionType = "CPM"; // Options: "CPM", "RBConfiguration", "Modularity"
     //std::string partitionType = "RBConfiguration"; 
-    std::string partitionType = "Modularity"; 
+    std::string partitionType = "Modularity"; //is it the only one that we need?!!!!!!!!!!
     double resolution = 0.001;            // Resolution parameter for CPM
     int randomSeed = 42;                // Seed for reproducibility
     //int iterations = -1;                // -1 for running until convergence
@@ -134,7 +136,9 @@ int main() {
     std::cout << "Cluster Assignments:" << std::endl;
     for(int64_t i = 0; i < n; ++i) {
         std::cout << "Original Node " << original_node_ids[i] << ": Cluster " << partition_arr[i] << std::endl;
+
     }
+        // HERE: pass the partition to Arachne or we have access to partition in memory and there is no return?!
 
     return 0;
 }
