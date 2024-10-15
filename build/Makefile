@@ -129,6 +129,19 @@ clustering_app/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/build
 .PHONY : clustering_app/fast
 
+#=============================================================================
+# Target rules for targets named example_runLeiden
+
+# Build rule for target.
+example_runLeiden: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example_runLeiden
+.PHONY : example_runLeiden
+
+# fast build rule for target.
+example_runLeiden/fast:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/build
+.PHONY : example_runLeiden/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -138,6 +151,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... clustering_app"
+	@echo "... example_runLeiden"
 .PHONY : help
 
 

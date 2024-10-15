@@ -9,6 +9,8 @@
 #include <libleidenalg/ModularityVertexPartition.h>
 #include <vector>
 #include <string>
+#include <map>
+#include <memory>
 
 class MyGraph {
 public:
@@ -24,17 +26,18 @@ public:
     void setPartitionType(const std::string& type);
     void setRandomSeed(int seed);
     void setIterations(int iterations);
+    void setAllEdgesWeight(double weight); // Optional for now: Set weights
+
 
 private:
-    igraph_t igraph;
-    Graph* leidenGraph;
-    std::vector<size_t> clusters;
+    igraph_t igraph_;
+    std::unique_ptr<Graph> leidenGraph_;
+    std::map<int, int> partitionMap_;
 
     // Configuration parameters
-    double resolutionParameter;
-    std::string partitionType;
-    int randomSeed;
-    int iterations;
+    double resolutionParameter_;
+    std::string partitionType_;
+    int randomSeed_;
+    int iterations_;
 };
-
 #endif // MYGRAPH_H

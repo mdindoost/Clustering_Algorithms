@@ -20,3 +20,11 @@ target_link_libraries(clustering_app
     igraph
     libleidenalg
 )
+# Create executable for the runLeiden example
+add_executable(example_runLeiden example_runLeiden.cpp runLeiden.cpp)
+
+# Link libraries to example_runLeiden
+target_link_libraries(example_runLeiden
+    igraph
+    libleidenalg
+)

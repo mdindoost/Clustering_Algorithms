@@ -77,6 +77,36 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/bits/mathcalls.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h \
+  /usr/include/c++/8/bits/specfun.h \
+  /usr/include/c++/8/bits/stl_algobase.h \
+  /usr/include/c++/8/bits/functexcept.h \
+  /usr/include/c++/8/bits/exception_defines.h \
+  /usr/include/c++/8/ext/numeric_traits.h \
+  /usr/include/c++/8/bits/stl_pair.h \
+  /usr/include/c++/8/bits/move.h \
+  /usr/include/c++/8/bits/concept_check.h \
+  /usr/include/c++/8/type_traits \
+  /usr/include/c++/8/bits/stl_iterator_base_types.h \
+  /usr/include/c++/8/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/8/debug/assertions.h \
+  /usr/include/c++/8/bits/stl_iterator.h \
+  /usr/include/c++/8/bits/ptr_traits.h \
+  /usr/include/c++/8/debug/debug.h \
+  /usr/include/c++/8/bits/predefined_ops.h \
+  /usr/include/c++/8/limits \
+  /usr/include/c++/8/tr1/gamma.tcc \
+  /usr/include/c++/8/tr1/special_function_util.h \
+  /usr/include/c++/8/tr1/bessel_function.tcc \
+  /usr/include/c++/8/tr1/special_function_util.h \
+  /usr/include/c++/8/tr1/beta_function.tcc \
+  /usr/include/c++/8/tr1/ell_integral.tcc \
+  /usr/include/c++/8/tr1/exp_integral.tcc \
+  /usr/include/c++/8/tr1/hypergeometric.tcc \
+  /usr/include/c++/8/tr1/legendre_function.tcc \
+  /usr/include/c++/8/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/8/tr1/poly_hermite.tcc \
+  /usr/include/c++/8/tr1/poly_laguerre.tcc \
+  /usr/include/c++/8/tr1/riemann_zeta.tcc \
   /usr/lib/gcc/x86_64-redhat-linux/8/include/stdbool.h \
   /usr/include/stdio.h \
   /usr/include/bits/types/__fpos_t.h \
@@ -174,21 +204,6 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/GraphHelper.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/libleidenalg_export.h \
   /usr/include/c++/8/vector \
-  /usr/include/c++/8/bits/stl_algobase.h \
-  /usr/include/c++/8/bits/functexcept.h \
-  /usr/include/c++/8/bits/exception_defines.h \
-  /usr/include/c++/8/ext/numeric_traits.h \
-  /usr/include/c++/8/bits/stl_pair.h \
-  /usr/include/c++/8/bits/move.h \
-  /usr/include/c++/8/bits/concept_check.h \
-  /usr/include/c++/8/type_traits \
-  /usr/include/c++/8/bits/stl_iterator_base_types.h \
-  /usr/include/c++/8/bits/stl_iterator_base_funcs.h \
-  /usr/include/c++/8/debug/assertions.h \
-  /usr/include/c++/8/bits/stl_iterator.h \
-  /usr/include/c++/8/bits/ptr_traits.h \
-  /usr/include/c++/8/debug/debug.h \
-  /usr/include/c++/8/bits/predefined_ops.h \
   /usr/include/c++/8/bits/allocator.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
   /usr/include/c++/8/ext/new_allocator.h \
@@ -205,8 +220,10 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/c++/8/ext/alloc_traits.h \
   /usr/include/c++/8/bits/alloc_traits.h \
   /usr/include/c++/8/bits/stl_uninitialized.h \
-  /usr/include/c++/8/bits/stl_vector.h \
+  /usr/include/c++/8/utility \
+  /usr/include/c++/8/bits/stl_relops.h \
   /usr/include/c++/8/initializer_list \
+  /usr/include/c++/8/bits/stl_vector.h \
   /usr/include/c++/8/bits/stl_bvector.h \
   /usr/include/c++/8/bits/functional_hash.h \
   /usr/include/c++/8/bits/range_access.h \
@@ -216,32 +233,29 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/c++/8/bits/stl_function.h \
   /usr/include/c++/8/backward/binders.h \
   /usr/include/c++/8/ext/aligned_buffer.h \
-  /usr/include/c++/8/bits/stl_set.h \
-  /usr/include/c++/8/bits/stl_multiset.h \
-  /usr/include/c++/8/deque \
-  /usr/include/c++/8/bits/stl_deque.h \
-  /usr/include/c++/8/bits/deque.tcc \
-  /usr/include/c++/8/cstdbool \
-  /usr/include/c++/8/iostream \
-  /usr/include/c++/8/ostream \
-  /usr/include/c++/8/ios \
-  /usr/include/c++/8/iosfwd \
+  /usr/include/c++/8/bits/node_handle.h \
+  /usr/include/c++/8/optional \
+  /usr/include/c++/8/stdexcept \
+  /usr/include/c++/8/string \
   /usr/include/c++/8/bits/stringfwd.h \
+  /usr/include/c++/8/bits/char_traits.h \
   /usr/include/c++/8/bits/postypes.h \
   /usr/include/c++/8/cwchar \
   /usr/include/wchar.h \
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/types/mbstate_t.h \
-  /usr/include/c++/8/bits/char_traits.h \
   /usr/include/c++/8/cstdint \
   /usr/include/c++/8/bits/localefwd.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
   /usr/include/c++/8/clocale \
   /usr/include/locale.h \
   /usr/include/bits/locale.h \
+  /usr/include/c++/8/iosfwd \
   /usr/include/c++/8/cctype \
   /usr/include/ctype.h \
-  /usr/include/c++/8/bits/ios_base.h \
+  /usr/include/c++/8/bits/ostream_insert.h \
+  /usr/include/c++/8/bits/cxxabi_forced.h \
+  /usr/include/c++/8/bits/basic_string.h \
   /usr/include/c++/8/ext/atomicity.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
@@ -252,11 +266,8 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/bits/cpu-set.h \
   /usr/include/bits/setjmp.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
-  /usr/include/c++/8/bits/locale_classes.h \
-  /usr/include/c++/8/string \
-  /usr/include/c++/8/bits/ostream_insert.h \
-  /usr/include/c++/8/bits/cxxabi_forced.h \
-  /usr/include/c++/8/bits/basic_string.h \
+  /usr/include/c++/8/string_view \
+  /usr/include/c++/8/bits/string_view.tcc \
   /usr/include/c++/8/ext/string_conversions.h \
   /usr/include/c++/8/cstdio \
   /usr/include/c++/8/cerrno \
@@ -268,10 +279,21 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/asm-generic/errno-base.h \
   /usr/include/bits/types/error_t.h \
   /usr/include/c++/8/bits/basic_string.tcc \
+  /usr/include/c++/8/bits/enable_special_members.h \
+  /usr/include/c++/8/bits/stl_set.h \
+  /usr/include/c++/8/bits/stl_multiset.h \
+  /usr/include/c++/8/deque \
+  /usr/include/c++/8/bits/stl_deque.h \
+  /usr/include/c++/8/bits/deque.tcc \
+  /usr/include/c++/8/cstdbool \
+  /usr/include/c++/8/iostream \
+  /usr/include/c++/8/ostream \
+  /usr/include/c++/8/ios \
+  /usr/include/c++/8/bits/ios_base.h \
+  /usr/include/c++/8/bits/locale_classes.h \
   /usr/include/c++/8/bits/locale_classes.tcc \
   /usr/include/c++/8/system_error \
   /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
-  /usr/include/c++/8/stdexcept \
   /usr/include/c++/8/streambuf \
   /usr/include/c++/8/bits/streambuf.tcc \
   /usr/include/c++/8/bits/basic_ios.h \
@@ -292,8 +314,6 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/c++/8/map \
   /usr/include/c++/8/bits/stl_map.h \
   /usr/include/c++/8/tuple \
-  /usr/include/c++/8/utility \
-  /usr/include/c++/8/bits/stl_relops.h \
   /usr/include/c++/8/array \
   /usr/include/c++/8/bits/uses_allocator.h \
   /usr/include/c++/8/bits/invoke.h \
@@ -306,7 +326,6 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /usr/include/c++/8/bits/algorithmfwd.h \
   /usr/include/c++/8/bits/stl_tempbuf.h \
   /usr/include/c++/8/bits/uniform_int_dist.h \
-  /usr/include/c++/8/limits \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/Optimiser.h \
   /usr/include/c++/8/cfloat \
   /usr/lib/gcc/x86_64-redhat-linux/8/include/float.h \
@@ -314,7 +333,19 @@ src/CMakeFiles/clustering_app.dir/MyGraph.cpp.o: /scratch/users/md724/Clustering
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/LinearResolutionParameterVertexPartition.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ResolutionParameterVertexPartition.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/RBConfigurationVertexPartition.h \
-  /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h
+  /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h \
+  /usr/include/c++/8/memory \
+  /usr/include/c++/8/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/8/ext/concurrence.h \
+  /usr/include/c++/8/bits/unique_ptr.h \
+  /usr/include/c++/8/bits/shared_ptr.h \
+  /usr/include/c++/8/bits/shared_ptr_base.h \
+  /usr/include/c++/8/bits/allocated_ptr.h \
+  /usr/include/c++/8/bits/refwrap.h \
+  /usr/include/c++/8/bits/shared_ptr_atomic.h \
+  /usr/include/c++/8/bits/atomic_base.h \
+  /usr/include/c++/8/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/8/backward/auto_ptr.h
 
 src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Algorithms/src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -392,6 +423,36 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/bits/mathcalls.h \
   /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h \
+  /usr/include/c++/8/bits/specfun.h \
+  /usr/include/c++/8/bits/stl_algobase.h \
+  /usr/include/c++/8/bits/functexcept.h \
+  /usr/include/c++/8/bits/exception_defines.h \
+  /usr/include/c++/8/ext/numeric_traits.h \
+  /usr/include/c++/8/bits/stl_pair.h \
+  /usr/include/c++/8/bits/move.h \
+  /usr/include/c++/8/bits/concept_check.h \
+  /usr/include/c++/8/type_traits \
+  /usr/include/c++/8/bits/stl_iterator_base_types.h \
+  /usr/include/c++/8/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/8/debug/assertions.h \
+  /usr/include/c++/8/bits/stl_iterator.h \
+  /usr/include/c++/8/bits/ptr_traits.h \
+  /usr/include/c++/8/debug/debug.h \
+  /usr/include/c++/8/bits/predefined_ops.h \
+  /usr/include/c++/8/limits \
+  /usr/include/c++/8/tr1/gamma.tcc \
+  /usr/include/c++/8/tr1/special_function_util.h \
+  /usr/include/c++/8/tr1/bessel_function.tcc \
+  /usr/include/c++/8/tr1/special_function_util.h \
+  /usr/include/c++/8/tr1/beta_function.tcc \
+  /usr/include/c++/8/tr1/ell_integral.tcc \
+  /usr/include/c++/8/tr1/exp_integral.tcc \
+  /usr/include/c++/8/tr1/hypergeometric.tcc \
+  /usr/include/c++/8/tr1/legendre_function.tcc \
+  /usr/include/c++/8/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/8/tr1/poly_hermite.tcc \
+  /usr/include/c++/8/tr1/poly_laguerre.tcc \
+  /usr/include/c++/8/tr1/riemann_zeta.tcc \
   /usr/lib/gcc/x86_64-redhat-linux/8/include/stdbool.h \
   /usr/include/stdio.h \
   /usr/include/bits/types/__fpos_t.h \
@@ -489,21 +550,6 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/GraphHelper.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/libleidenalg_export.h \
   /usr/include/c++/8/vector \
-  /usr/include/c++/8/bits/stl_algobase.h \
-  /usr/include/c++/8/bits/functexcept.h \
-  /usr/include/c++/8/bits/exception_defines.h \
-  /usr/include/c++/8/ext/numeric_traits.h \
-  /usr/include/c++/8/bits/stl_pair.h \
-  /usr/include/c++/8/bits/move.h \
-  /usr/include/c++/8/bits/concept_check.h \
-  /usr/include/c++/8/type_traits \
-  /usr/include/c++/8/bits/stl_iterator_base_types.h \
-  /usr/include/c++/8/bits/stl_iterator_base_funcs.h \
-  /usr/include/c++/8/debug/assertions.h \
-  /usr/include/c++/8/bits/stl_iterator.h \
-  /usr/include/c++/8/bits/ptr_traits.h \
-  /usr/include/c++/8/debug/debug.h \
-  /usr/include/c++/8/bits/predefined_ops.h \
   /usr/include/c++/8/bits/allocator.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h \
   /usr/include/c++/8/ext/new_allocator.h \
@@ -520,8 +566,10 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/c++/8/ext/alloc_traits.h \
   /usr/include/c++/8/bits/alloc_traits.h \
   /usr/include/c++/8/bits/stl_uninitialized.h \
-  /usr/include/c++/8/bits/stl_vector.h \
+  /usr/include/c++/8/utility \
+  /usr/include/c++/8/bits/stl_relops.h \
   /usr/include/c++/8/initializer_list \
+  /usr/include/c++/8/bits/stl_vector.h \
   /usr/include/c++/8/bits/stl_bvector.h \
   /usr/include/c++/8/bits/functional_hash.h \
   /usr/include/c++/8/bits/range_access.h \
@@ -531,32 +579,29 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/c++/8/bits/stl_function.h \
   /usr/include/c++/8/backward/binders.h \
   /usr/include/c++/8/ext/aligned_buffer.h \
-  /usr/include/c++/8/bits/stl_set.h \
-  /usr/include/c++/8/bits/stl_multiset.h \
-  /usr/include/c++/8/deque \
-  /usr/include/c++/8/bits/stl_deque.h \
-  /usr/include/c++/8/bits/deque.tcc \
-  /usr/include/c++/8/cstdbool \
-  /usr/include/c++/8/iostream \
-  /usr/include/c++/8/ostream \
-  /usr/include/c++/8/ios \
-  /usr/include/c++/8/iosfwd \
+  /usr/include/c++/8/bits/node_handle.h \
+  /usr/include/c++/8/optional \
+  /usr/include/c++/8/stdexcept \
+  /usr/include/c++/8/string \
   /usr/include/c++/8/bits/stringfwd.h \
+  /usr/include/c++/8/bits/char_traits.h \
   /usr/include/c++/8/bits/postypes.h \
   /usr/include/c++/8/cwchar \
   /usr/include/wchar.h \
   /usr/include/bits/types/wint_t.h \
   /usr/include/bits/types/mbstate_t.h \
-  /usr/include/c++/8/bits/char_traits.h \
   /usr/include/c++/8/cstdint \
   /usr/include/c++/8/bits/localefwd.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h \
   /usr/include/c++/8/clocale \
   /usr/include/locale.h \
   /usr/include/bits/locale.h \
+  /usr/include/c++/8/iosfwd \
   /usr/include/c++/8/cctype \
   /usr/include/ctype.h \
-  /usr/include/c++/8/bits/ios_base.h \
+  /usr/include/c++/8/bits/ostream_insert.h \
+  /usr/include/c++/8/bits/cxxabi_forced.h \
+  /usr/include/c++/8/bits/basic_string.h \
   /usr/include/c++/8/ext/atomicity.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h \
@@ -567,11 +612,8 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/bits/cpu-set.h \
   /usr/include/bits/setjmp.h \
   /usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h \
-  /usr/include/c++/8/bits/locale_classes.h \
-  /usr/include/c++/8/string \
-  /usr/include/c++/8/bits/ostream_insert.h \
-  /usr/include/c++/8/bits/cxxabi_forced.h \
-  /usr/include/c++/8/bits/basic_string.h \
+  /usr/include/c++/8/string_view \
+  /usr/include/c++/8/bits/string_view.tcc \
   /usr/include/c++/8/ext/string_conversions.h \
   /usr/include/c++/8/cstdio \
   /usr/include/c++/8/cerrno \
@@ -583,10 +625,21 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/asm-generic/errno-base.h \
   /usr/include/bits/types/error_t.h \
   /usr/include/c++/8/bits/basic_string.tcc \
+  /usr/include/c++/8/bits/enable_special_members.h \
+  /usr/include/c++/8/bits/stl_set.h \
+  /usr/include/c++/8/bits/stl_multiset.h \
+  /usr/include/c++/8/deque \
+  /usr/include/c++/8/bits/stl_deque.h \
+  /usr/include/c++/8/bits/deque.tcc \
+  /usr/include/c++/8/cstdbool \
+  /usr/include/c++/8/iostream \
+  /usr/include/c++/8/ostream \
+  /usr/include/c++/8/ios \
+  /usr/include/c++/8/bits/ios_base.h \
+  /usr/include/c++/8/bits/locale_classes.h \
   /usr/include/c++/8/bits/locale_classes.tcc \
   /usr/include/c++/8/system_error \
   /usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h \
-  /usr/include/c++/8/stdexcept \
   /usr/include/c++/8/streambuf \
   /usr/include/c++/8/bits/streambuf.tcc \
   /usr/include/c++/8/bits/basic_ios.h \
@@ -607,8 +660,6 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/c++/8/map \
   /usr/include/c++/8/bits/stl_map.h \
   /usr/include/c++/8/tuple \
-  /usr/include/c++/8/utility \
-  /usr/include/c++/8/bits/stl_relops.h \
   /usr/include/c++/8/array \
   /usr/include/c++/8/bits/uses_allocator.h \
   /usr/include/c++/8/bits/invoke.h \
@@ -621,7 +672,6 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /usr/include/c++/8/bits/algorithmfwd.h \
   /usr/include/c++/8/bits/stl_tempbuf.h \
   /usr/include/c++/8/bits/uniform_int_dist.h \
-  /usr/include/c++/8/limits \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/Optimiser.h \
   /usr/include/c++/8/cfloat \
   /usr/lib/gcc/x86_64-redhat-linux/8/include/float.h \
@@ -629,633 +679,705 @@ src/CMakeFiles/clustering_app.dir/main.cpp.o: /scratch/users/md724/Clustering_Al
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/LinearResolutionParameterVertexPartition.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ResolutionParameterVertexPartition.h \
   /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/RBConfigurationVertexPartition.h \
-  /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h
+  /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h \
+  /usr/include/c++/8/memory \
+  /usr/include/c++/8/bits/stl_raw_storage_iter.h \
+  /usr/include/c++/8/ext/concurrence.h \
+  /usr/include/c++/8/bits/unique_ptr.h \
+  /usr/include/c++/8/bits/shared_ptr.h \
+  /usr/include/c++/8/bits/shared_ptr_base.h \
+  /usr/include/c++/8/bits/allocated_ptr.h \
+  /usr/include/c++/8/bits/refwrap.h \
+  /usr/include/c++/8/bits/shared_ptr_atomic.h \
+  /usr/include/c++/8/bits/atomic_base.h \
+  /usr/include/c++/8/bits/atomic_lockfree_defines.h \
+  /usr/include/c++/8/backward/auto_ptr.h
 
 
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/RBConfigurationVertexPartition.h:
+/usr/include/c++/8/backward/auto_ptr.h:
 
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ResolutionParameterVertexPartition.h:
+/usr/include/c++/8/bits/atomic_lockfree_defines.h:
+
+/usr/include/c++/8/bits/shared_ptr_atomic.h:
+
+/usr/include/c++/8/bits/refwrap.h:
+
+/usr/include/c++/8/bits/shared_ptr_base.h:
+
+/usr/include/c++/8/ext/concurrence.h:
+
+/usr/include/c++/8/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/8/memory:
+
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/LinearResolutionParameterVertexPartition.h:
 
 /scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/CPMVertexPartition.h:
 
+/usr/lib/gcc/x86_64-redhat-linux/8/include/float.h:
+
 /usr/include/c++/8/cfloat:
 
-/usr/include/c++/8/limits:
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/Optimiser.h:
 
 /usr/include/c++/8/bits/uniform_int_dist.h:
 
-/usr/include/c++/8/bits/algorithmfwd.h:
+/usr/include/c++/8/algorithm:
 
-/usr/include/c++/8/bits/stl_algo.h:
-
-/usr/include/c++/8/bits/stl_heap.h:
+/usr/include/c++/8/queue:
 
 /usr/include/c++/8/bits/stl_multimap.h:
 
-/usr/include/c++/8/array:
+/usr/include/c++/8/bits/invoke.h:
+
+/usr/include/c++/8/bits/stl_algo.h:
+
+/usr/include/c++/8/bits/uses_allocator.h:
 
 /usr/include/c++/8/tuple:
 
-/usr/include/c++/8/map:
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/MutableVertexPartition.h:
 
 /usr/include/c++/8/istream:
 
 /usr/include/c++/8/bits/ostream.tcc:
 
-/scratch/users/md724/Clustering_Algorithms/src/main.cpp:
+/usr/include/c++/8/bits/locale_facets.tcc:
 
-/usr/include/c++/8/bits/basic_ios.tcc:
+/usr/include/c++/8/bits/streambuf_iterator.h:
 
-/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h:
+/usr/include/c++/8/bits/stl_heap.h:
 
-/usr/include/wctype.h:
-
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h:
+/usr/include/bits/wctype-wchar.h:
 
 /usr/include/c++/8/cwctype:
 
-/usr/include/c++/8/bits/locale_facets.h:
+/usr/include/c++/8/bits/streambuf.tcc:
 
-/usr/include/c++/8/streambuf:
+/usr/include/c++/8/bits/locale_classes.tcc:
 
-/usr/include/c++/8/stdexcept:
+/usr/include/c++/8/bits/shared_ptr.h:
 
-/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h:
+/usr/include/c++/8/bits/locale_classes.h:
 
-/usr/include/c++/8/system_error:
+/usr/include/c++/8/ios:
+
+/usr/include/c++/8/bits/deque.tcc:
+
+/usr/include/c++/8/deque:
+
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ResolutionParameterVertexPartition.h:
+
+/usr/include/c++/8/bits/stl_multiset.h:
+
+/usr/include/c++/8/bits/enable_special_members.h:
+
+/usr/include/c++/8/bits/basic_string.tcc:
+
+/usr/include/asm-generic/errno-base.h:
 
 /usr/include/asm-generic/errno.h:
 
-/usr/include/asm/errno.h:
-
 /usr/include/c++/8/cerrno:
 
-/usr/include/c++/8/ext/string_conversions.h:
-
-/usr/include/c++/8/bits/locale_facets.tcc:
-
-/usr/include/c++/8/bits/basic_string.h:
-
-/usr/include/c++/8/string:
+/usr/include/c++/8/bits/string_view.tcc:
 
 /usr/include/bits/setjmp.h:
+
+/usr/include/bits/cpu-set.h:
+
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/RBConfigurationVertexPartition.h:
 
 /usr/include/bits/types/struct_sched_param.h:
 
 /usr/include/pthread.h:
 
-/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h:
+/usr/include/c++/8/bits/locale_facets.h:
 
-/usr/include/c++/8/utility:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_pmt.h:
 
-/usr/include/bits/locale.h:
+/usr/include/c++/8/bits/ios_base.h:
 
-/usr/include/c++/8/cctype:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_version.h:
 
-/usr/include/locale.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_complex.h:
 
-/usr/include/c++/8/clocale:
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/ModularityVertexPartition.h:
 
-/usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector.h:
+
+/usr/include/bits/types/__fpos64_t.h:
+
+/usr/include/c++/8/bits/unique_ptr.h:
 
 /usr/include/bits/types/error_t.h:
 
-/usr/include/c++/8/cstdint:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_attributes.h:
 
-/usr/include/c++/8/bits/char_traits.h:
+/usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/bits/types/mbstate_t.h:
+/usr/include/bits/time.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/c++/8/tr1/riemann_zeta.tcc:
+
+/usr/include/c++/8/tr1/legendre_function.tcc:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/bits/flt-eval-method.h:
 
 /usr/include/bits/types/wint_t.h:
 
-/usr/include/ctype.h:
+/usr/include/c++/8/map:
 
-/usr/include/c++/8/cwchar:
+/usr/include/c++/8/bits/predefined_ops.h:
 
-/usr/include/c++/8/bits/postypes.h:
+/usr/include/c++/8/tr1/modified_bessel_func.tcc:
 
-/usr/include/c++/8/bits/stl_deque.h:
+/usr/include/c++/8/tr1/exp_integral.tcc:
 
-/usr/include/c++/8/deque:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_mixing.h:
 
-/usr/include/c++/8/bits/stl_multiset.h:
-
-/usr/include/c++/8/bits/stl_tempbuf.h:
-
-/usr/include/c++/8/bits/stl_set.h:
-
-/usr/include/c++/8/ext/aligned_buffer.h:
-
-/usr/include/c++/8/bits/stl_tree.h:
-
-/usr/include/c++/8/set:
-
-/usr/include/c++/8/bits/stl_queue.h:
-
-/usr/include/c++/8/bits/deque.tcc:
-
-/usr/include/c++/8/bits/vector.tcc:
-
-/usr/include/c++/8/bits/functional_hash.h:
-
-/usr/include/c++/8/bits/range_access.h:
-
-/usr/include/c++/8/bits/alloc_traits.h:
-
-/usr/include/c++/8/ext/alloc_traits.h:
-
-/usr/include/c++/8/cstdio:
-
-/usr/include/c++/8/bits/stl_vector.h:
-
-/usr/include/c++/8/bits/memoryfwd.h:
-
-/usr/include/c++/8/initializer_list:
-
-/usr/include/c++/8/bits/nested_exception.h:
-
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/Optimiser.h:
-
-/usr/include/c++/8/bits/streambuf.tcc:
-
-/usr/include/c++/8/bits/hash_bytes.h:
-
-/usr/include/c++/8/bits/localefwd.h:
-
-/usr/include/c++/8/bits/exception.h:
-
-/usr/include/c++/8/backward/binders.h:
-
-/usr/include/c++/8/exception:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h:
-
-/usr/include/c++/8/bits/allocator.h:
+/usr/include/c++/8/string_view:
 
 /usr/include/c++/8/bits/ptr_traits.h:
-
-/usr/include/c++/8/bits/stl_iterator.h:
-
-/usr/include/c++/8/bits/istream.tcc:
-
-/usr/include/c++/8/cstdbool:
 
 /usr/include/c++/8/debug/assertions.h:
 
 /usr/include/c++/8/bits/stl_iterator_base_funcs.h:
 
-/usr/include/c++/8/bits/concept_check.h:
-
-/usr/include/c++/8/bits/stl_pair.h:
-
-/usr/include/c++/8/bits/stl_algobase.h:
-
-/usr/include/c++/8/vector:
-
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/libleidenalg_export.h:
-
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/GraphHelper.h:
-
-/usr/include/wchar.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bitset_list.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_eulerian.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matching.h:
-
-/usr/include/bits/flt-eval-method.h:
-
-/usr/include/c++/8/bits/cpp_type_traits.h:
-
-/usr/include/bits/types/sigset_t.h:
-
-/usr/include/c++/8/ext/new_allocator.h:
+/usr/lib/gcc/x86_64-redhat-linux/8/include/stdbool.h:
 
 /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_reachability.h:
+/usr/include/c++/8/string:
 
-/usr/include/bits/mathcalls-helper-functions.h:
-
-/usr/include/c++/8/debug/debug.h:
-
-/usr/include/bits/wordsize.h:
-
-/usr/include/gnu/stubs.h:
-
-/usr/include/c++/8/bits/stl_relops.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_config.h:
-
-/usr/include/bits/types/clockid_t.h:
-
-/usr/include/c++/8/typeinfo:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix.h:
-
-/usr/include/bits/stdlib-float.h:
-
-/usr/include/bits/iscanonical.h:
-
-/usr/include/stdint.h:
-
-/usr/include/alloca.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_transitivity.h:
-
-/usr/include/bits/wctype-wchar.h:
-
-/usr/include/c++/8/bits/stl_bvector.h:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_types.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_operators.h:
-
-/usr/include/bits/pthreadtypes.h:
-
-/usr/include/errno.h:
-
-/usr/include/bits/sys_errlist.h:
-
-/usr/include/bits/types/struct_timespec.h:
-
-/usr/include/bits/types/__sigset_t.h:
-
-/usr/include/bits/types/struct_timeval.h:
-
-/usr/include/c++/8/bits/locale_classes.h:
-
-/usr/include/c++/8/type_traits:
-
-/usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/bits/fp-logb.h:
-
-/usr/include/bits/math-vector.h:
-
-/usr/include/c++/8/bits/stl_construct.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/bits/endian.h:
-
-/usr/include/c++/8/bits/ostream_insert.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph.h:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/bits/types/timer_t.h:
-
-/usr/include/c++/8/bits/invoke.h:
-
-/usr/include/sys/select.h:
-
-/usr/include/c++/8/ext/type_traits.h:
-
-/usr/include/bits/uintn-identity.h:
-
-/usr/include/bits/types/time_t.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_version.h:
-
-/usr/include/bits/libc-header-start.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix_list.h:
-
-/usr/include/features.h:
-
-/usr/include/sys/types.h:
-
-/usr/include/bits/long-double.h:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_complex.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_qsort.h:
-
-/usr/include/sys/cdefs.h:
-
-/usr/include/c++/8/bits/stl_iterator_base_types.h:
-
-/usr/include/c++/8/math.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_strvector.h:
-
-/usr/include/bits/thread-shared-types.h:
-
-/usr/include/c++/8/bits/stl_uninitialized.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_error.h:
-
-/usr/include/c++/8/bits/ios_base.h:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/8/include/stdbool.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/sched.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_stack.h:
-
-/scratch/users/md724/Clustering_Algorithms/src/MyGraph.cpp:
-
-/usr/include/c++/8/iostream:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_attributes.h:
-
-/usr/include/bits/mathcalls.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cocitation.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_heap.h:
-
-/scratch/users/md724/Clustering_Algorithms/src/MyGraph.h:
-
-/usr/include/c++/8/bits/basic_ios.h:
-
-/usr/include/bits/errno.h:
-
-/usr/include/c++/8/cmath:
-
-/usr/include/bits/sched.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_random.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_decls.h:
-
-/usr/include/bits/mathcalls-narrow.h:
-
-/usr/include/linux/errno.h:
-
-/usr/include/c++/8/ext/atomicity.h:
-
-/usr/include/c++/8/bits/move.h:
-
-/usr/include/bits/select.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/8/include/float.h:
-
-/usr/include/gnu/stubs-64.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graph_list.h:
-
-/usr/include/endian.h:
-
-/usr/include/c++/8/bits/predefined_ops.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_games.h:
-
-/usr/include/bits/types.h:
-
-/usr/include/c++/8/bits/basic_string.tcc:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_list.h:
-
-/usr/include/stdio.h:
-
-/usr/include/stdlib.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_threading.h:
-
-/usr/include/bits/wchar.h:
-
-/usr/include/bits/cpu-set.h:
-
-/usr/include/c++/8/stdlib.h:
-
-/usr/include/bits/stdint-intn.h:
+/usr/include/c++/8/bits/stl_map.h:
 
 /usr/include/c++/8/ext/numeric_traits.h:
 
 /usr/include/c++/8/bits/exception_defines.h:
 
-/usr/include/c++/8/bits/std_abs.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_constructors.h:
 
-/usr/include/bits/stdint-uintn.h:
+/usr/include/bits/mathcalls.h:
 
-/usr/include/c++/8/new:
+/usr/include/bits/types/clock_t.h:
 
-/usr/include/bits/waitstatus.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_heap_pmt.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_export.h:
+/usr/include/c++/8/bits/range_access.h:
 
-/usr/include/bits/waitflags.h:
+/usr/include/c++/8/bits/istream.tcc:
 
-/usr/include/c++/8/ios:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_visitor.h:
 
-/usr/include/bits/floatn.h:
+/usr/include/c++/8/bits/algorithmfwd.h:
 
 /usr/include/c++/8/bits/exception_ptr.h:
 
-/usr/include/bits/types/__locale_t.h:
+/usr/include/bits/fp-logb.h:
 
-/usr/include/bits/floatn-common.h:
+/usr/include/c++/8/bits/stl_tree.h:
 
-/usr/include/bits/typesizes.h:
+/usr/include/c++/8/tr1/ell_integral.tcc:
 
-/usr/include/bits/types/locale_t.h:
+/usr/include/c++/8/cstdbool:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_nongraph.h:
+/usr/include/bits/libm-simd-decl-stubs.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cycles.h:
+/usr/include/c++/8/bits/stl_pair.h:
 
-/usr/include/bits/types/__fpos_t.h:
+/usr/include/c++/8/debug/debug.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graphlets.h:
+/usr/include/bits/math-vector.h:
 
-/usr/include/c++/8/iosfwd:
+/usr/include/c++/8/ext/type_traits.h:
 
-/usr/include/bits/types/__FILE.h:
-
-/usr/include/c++/8/bits/streambuf_iterator.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_type.h:
+/usr/include/c++/8/cstdio:
 
 /usr/include/bits/types/struct_FILE.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_lsap.h:
+/usr/include/c++/8/math.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_statusbar.h:
+/usr/include/c++/8/bits/stl_deque.h:
 
-/usr/include/bits/stdio_lim.h:
+/usr/include/inttypes.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graphicality.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_constants.h:
+/usr/include/time.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_scan.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_random.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_pmt.h:
+/usr/include/bits/types/__locale_t.h:
 
-/usr/include/asm-generic/errno-base.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_ptr.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_pmt_off.h:
+/usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bitset.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph.h:
 
-/usr/include/bits/types/FILE.h:
+/scratch/users/md724/Clustering_Algorithms/src/MyGraph.cpp:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_pmt.h:
+/usr/include/c++/8/bits/stl_set.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bitset_list.h:
+
+/usr/include/c++/8/bits/stl_bvector.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_coloring.h:
+
+/usr/include/bits/mathcalls-narrow.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/c++/8/clocale:
+
+/usr/include/c++/8/streambuf:
+
+/usr/include/c++/8/bits/stl_vector.h:
+
+/usr/include/c++/8/stdlib.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_threading.h:
+
+/usr/include/bits/floatn.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
+
+/usr/include/c++/8/type_traits:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_foreign.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/bits/stdint-uintn.h:
 
 /usr/include/c++/8/bits/functexcept.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_epidemics.h:
+/usr/include/c++/8/cmath:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/c++/8/cstdlib:
+
+/usr/include/c++/8/tr1/bessel_function.tcc:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_motifs.h:
+
+/usr/include/c++/8/tr1/poly_hermite.tcc:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_config.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_hrg.h:
+
+/usr/include/bits/types/struct_tm.h:
+
+/usr/include/bits/iscanonical.h:
+
+/usr/include/c++/8/bits/basic_ios.h:
+
+/usr/include/math.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cohesive_blocks.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/c++config.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/c++/8/array:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/c++/8/bits/char_traits.h:
+
+/usr/include/stdio.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/error_constants.h:
+
+/usr/include/c++/8/ext/aligned_buffer.h:
+
+/usr/include/bits/uintn-identity.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_flow.h:
+
+/usr/include/c++/8/tr1/hypergeometric.tcc:
+
+/usr/include/bits/endian.h:
+
+/usr/include/c++/8/backward/binders.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_pmt_off.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/linux/errno.h:
+
+/scratch/users/md724/Clustering_Algorithms/src/MyGraph.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/c++/8/bits/memoryfwd.h:
+
+/usr/include/c++/8/bits/stl_construct.h:
+
+/usr/include/c++/8/tr1/special_function_util.h:
+
+/usr/include/bits/sched.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_type.h:
+
+/usr/include/features.h:
+
+/usr/include/c++/8/bits/stl_iterator.h:
+
+/usr/include/c++/8/bits/cpp_type_traits.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_base.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_interrupt.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/os_defines.h:
+
+/usr/include/c++/8/bits/stl_tempbuf.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bitset.h:
+
+/usr/include/c++/8/tr1/beta_function.tcc:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/bits/errno.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_error.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_decls.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/c++allocator.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_export.h:
+
+/usr/include/ctype.h:
+
+/usr/include/bits/types/__sigset_t.h:
+
+/usr/include/c++/8/bits/move.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_arpack.h:
+
+/usr/include/bits/floatn-common.h:
+
+/usr/include/c++/8/bits/stl_queue.h:
+
+/usr/include/c++/8/tr1/gamma.tcc:
+
+/usr/include/c++/8/bits/std_abs.h:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/c++/8/exception:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_memory.h:
+
+/usr/include/alloca.h:
+
+/usr/include/c++/8/bits/node_handle.h:
+
+/usr/include/bits/stdint-intn.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/c++/8/ostream:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_list.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_constants.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_microscopic_update.h:
+
+/usr/include/c++/8/cstdint:
 
 /usr/include/bits/byteswap.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cocitation.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_operators.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h:
+
+/usr/include/bits/types/struct_timeval.h:
 
 /usr/include/bits/timex.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_progress.h:
 
-/usr/include/bits/types/cookie_io_functions_t.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_statusbar.h:
 
-/usr/include/bits/types/struct_tm.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_topology.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix_pmt.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_interrupt.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_constructors.h:
-
-/usr/include/c++/8/queue:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_array.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_dqueue.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_dqueue_pmt.h:
-
-/usr/include/bits/time.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_stack_pmt.h:
-
-/usr/include/c++/8/bits/stringfwd.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_mixing.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_heap_pmt.h:
-
-/usr/include/c++/8/bits/stl_map.h:
-
-/usr/include/c++/8/bits/stl_function.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_layout.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cohesive_blocks.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_typed_list_pmt.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bipartite.h:
-
-/usr/include/c++/8/cstdlib:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_ptr.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_centrality.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_sparsemat.h:
-
-/usr/include/time.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_iterators.h:
-
-/usr/include/c++/8/bits/cxxabi_forced.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_interface.h:
-
-/usr/include/bits/types/clock_t.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graphicality.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_microscopic_update.h:
-
-/usr/include/c++/8/algorithm:
-
-/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_lapack.h:
-
-/usr/include/math.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_psumtree.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_paths.h:
-
-/usr/include/c++/8/bits/cxxabi_init_exception.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_foreign.h:
-
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_adjlist.h:
+/usr/include/c++/8/bits/alloc_traits.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_array_pmt.h:
 
+/usr/include/c++/8/bits/specfun.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_vector_pmt.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_array.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/8/ext/string_conversions.h:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_nongraph.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix_pmt.h:
+
+/usr/include/locale.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_dqueue.h:
+
+/usr/include/wctype.h:
+
+/usr/include/sched.h:
+
+/usr/include/bits/fp-fast.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_types.h:
+
+/usr/include/c++/8/typeinfo:
+
+/usr/include/errno.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_dqueue_pmt.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_stack.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/ctype_inline.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_stack_pmt.h:
+
+/usr/include/c++/8/tr1/poly_laguerre.tcc:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_topology.h:
+
+/usr/include/c++/8/bits/basic_string.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_strvector.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_datatype.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_heap.h:
+
+/usr/include/c++/8/ext/atomicity.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_typed_list_pmt.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_embedding.h:
+
+/usr/include/c++/8/bits/atomic_base.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/atomic_word.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graph_list.h:
+
+/usr/include/bits/locale.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_iterators.h:
+
+/usr/include/c++/8/bits/stl_uninitialized.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_interface.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matrix_list.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_centrality.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_paths.h:
+
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_components.h:
 
-/usr/include/c++/8/bits/uses_allocator.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_transitivity.h:
+
+/usr/include/c++/8/bits/basic_ios.tcc:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/8/bits/allocated_ptr.h:
+
+/usr/include/sys/types.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_structural.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_neighborhood.h:
 
-/usr/include/c++/8/x86_64-redhat-linux/bits/gthr-default.h:
+/usr/include/stdc-predef.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_motifs.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_adjlist.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cliques.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_scan.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_memory.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_bipartite.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_datatype.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_sparsemat.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_visitor.h:
+/usr/include/c++/8/bits/stringfwd.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_psumtree.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_layout.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_community.h:
 
-/usr/include/inttypes.h:
+/usr/include/c++/8/system_error:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_arpack.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_games.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_conversion.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_flow.h:
-
-/usr/include/bits/fp-fast.h:
-
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_blas.h:
+
+/usr/include/c++/8/limits:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_lapack.h:
+
+/usr/include/c++/8/bits/stl_iterator_base_types.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_separators.h:
 
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/MutableVertexPartition.h:
+/usr/include/c++/8/cctype:
 
-/usr/include/c++/8/bits/locale_classes.tcc:
+/usr/include/c++/8/bits/cxxabi_forced.h:
 
 /scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_eigen.h:
 
-/usr/include/c++/8/ostream:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_matching.h:
 
-/usr/lib/gcc/x86_64-redhat-linux/8/include/stdint.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cycles.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_hrg.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_reachability.h:
 
-/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/LinearResolutionParameterVertexPartition.h:
+/usr/include/c++/8/ext/alloc_traits.h:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_embedding.h:
+/usr/include/c++/8/cwchar:
 
-/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_coloring.h:
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_graphlets.h:
+
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/GraphHelper.h:
+
+/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include/libleidenalg/libleidenalg_export.h:
+
+/usr/include/c++/8/vector:
+
+/usr/include/c++/8/bits/allocator.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_epidemics.h:
+
+/usr/include/c++/8/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/8/ext/new_allocator.h:
+
+/usr/include/c++/8/new:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/cpu_defines.h:
+
+/usr/include/c++/8/bits/exception.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_lsap.h:
+
+/usr/include/c++/8/bits/hash_bytes.h:
+
+/usr/include/c++/8/bits/nested_exception.h:
+
+/usr/include/c++/8/utility:
+
+/usr/include/c++/8/bits/stl_relops.h:
+
+/usr/include/c++/8/bits/concept_check.h:
+
+/usr/include/c++/8/initializer_list:
+
+/usr/include/c++/8/bits/functional_hash.h:
+
+/usr/include/bits/types/sigset_t.h:
+
+/usr/include/c++/8/bits/vector.tcc:
+
+/usr/include/c++/8/iostream:
+
+/usr/include/c++/8/set:
+
+/usr/include/c++/8/bits/stl_function.h:
+
+/usr/include/c++/8/optional:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_qsort.h:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_cliques.h:
+
+/usr/include/c++/8/stdexcept:
+
+/usr/include/c++/8/bits/postypes.h:
+
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/include/c++/8/bits/localefwd.h:
+
+/usr/include/c++/8/bits/stl_algobase.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/c++locale.h:
+
+/scratch/users/md724/Clustering_Algorithms/src/main.cpp:
+
+/usr/include/endian.h:
+
+/usr/include/stdint.h:
+
+/usr/include/c++/8/iosfwd:
+
+/scratch/users/md724/Clustering_Algorithms/igraph/install/include/igraph/igraph_eulerian.h:
+
+/usr/include/c++/8/bits/ostream_insert.h:
+
+/usr/include/c++/8/x86_64-redhat-linux/bits/gthr.h:

@@ -130,6 +130,20 @@ clustering_app/fast:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/build
 .PHONY : clustering_app/fast
 
+# Convenience name for target.
+src/CMakeFiles/example_runLeiden.dir/rule:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/example_runLeiden.dir/rule
+.PHONY : src/CMakeFiles/example_runLeiden.dir/rule
+
+# Convenience name for target.
+example_runLeiden: src/CMakeFiles/example_runLeiden.dir/rule
+.PHONY : example_runLeiden
+
+# fast build rule for target.
+example_runLeiden/fast:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/build
+.PHONY : example_runLeiden/fast
+
 MyGraph.o: MyGraph.cpp.o
 .PHONY : MyGraph.o
 
@@ -153,6 +167,30 @@ MyGraph.s: MyGraph.cpp.s
 MyGraph.cpp.s:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/MyGraph.cpp.s
 .PHONY : MyGraph.cpp.s
+
+example_runLeiden.o: example_runLeiden.cpp.o
+.PHONY : example_runLeiden.o
+
+# target to build an object file
+example_runLeiden.cpp.o:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/example_runLeiden.cpp.o
+.PHONY : example_runLeiden.cpp.o
+
+example_runLeiden.i: example_runLeiden.cpp.i
+.PHONY : example_runLeiden.i
+
+# target to preprocess a source file
+example_runLeiden.cpp.i:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/example_runLeiden.cpp.i
+.PHONY : example_runLeiden.cpp.i
+
+example_runLeiden.s: example_runLeiden.cpp.s
+.PHONY : example_runLeiden.s
+
+# target to generate assembly for a file
+example_runLeiden.cpp.s:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/example_runLeiden.cpp.s
+.PHONY : example_runLeiden.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -178,6 +216,30 @@ main.cpp.s:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+runLeiden.o: runLeiden.cpp.o
+.PHONY : runLeiden.o
+
+# target to build an object file
+runLeiden.cpp.o:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.o
+.PHONY : runLeiden.cpp.o
+
+runLeiden.i: runLeiden.cpp.i
+.PHONY : runLeiden.i
+
+# target to preprocess a source file
+runLeiden.cpp.i:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.i
+.PHONY : runLeiden.cpp.i
+
+runLeiden.s: runLeiden.cpp.s
+.PHONY : runLeiden.s
+
+# target to generate assembly for a file
+runLeiden.cpp.s:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.s
+.PHONY : runLeiden.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -187,12 +249,19 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... clustering_app"
+	@echo "... example_runLeiden"
 	@echo "... MyGraph.o"
 	@echo "... MyGraph.i"
 	@echo "... MyGraph.s"
+	@echo "... example_runLeiden.o"
+	@echo "... example_runLeiden.i"
+	@echo "... example_runLeiden.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... runLeiden.o"
+	@echo "... runLeiden.i"
+	@echo "... runLeiden.s"
 .PHONY : help
 
 

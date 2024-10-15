@@ -43,4 +43,4 @@ make
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(pwd)/../igraph/install/lib64:$(pwd)/../libleidenalg/install/lib
 
 echo "Build complete. You can run your application with:"
-echo "echo "./src/clustering_app"
+echo "./build/src/clustering_app"

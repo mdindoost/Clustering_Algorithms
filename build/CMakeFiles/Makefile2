@@ -79,6 +79,7 @@ clean: src/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/clustering_app.dir/all
+src/all: src/CMakeFiles/example_runLeiden.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -87,6 +88,7 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/clustering_app.dir/clean
+src/clean: src/CMakeFiles/example_runLeiden.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -114,6 +116,32 @@ clustering_app: src/CMakeFiles/clustering_app.dir/rule
 src/CMakeFiles/clustering_app.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/clean
 .PHONY : src/CMakeFiles/clustering_app.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/example_runLeiden.dir
+
+# All Build rule for target.
+src/CMakeFiles/example_runLeiden.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/scratch/users/md724/Clustering_Algorithms/build/CMakeFiles --progress-num=4,5,6 "Built target example_runLeiden"
+.PHONY : src/CMakeFiles/example_runLeiden.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/example_runLeiden.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /scratch/users/md724/Clustering_Algorithms/build/CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/example_runLeiden.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /scratch/users/md724/Clustering_Algorithms/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/example_runLeiden.dir/rule
+
+# Convenience name for target.
+example_runLeiden: src/CMakeFiles/example_runLeiden.dir/rule
+.PHONY : example_runLeiden
+
+# clean rule for target.
+src/CMakeFiles/example_runLeiden.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/clean
+.PHONY : src/CMakeFiles/example_runLeiden.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
