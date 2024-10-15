@@ -21,7 +21,7 @@ The Clustering Algorithms Project provides a framework for performing community 
 ## Features
 
 - **Leiden Algorithm Implementation**: Efficient community detection using the `Leiden algorithm 0.11.1`.
-- **Graph Creation**: Supports custom graph creation using `igraph 10.13`.
+- **Graph Creation**: Supports custom graph creation using `igraph 0.10.13`.
 - **Automated Build Script**: Simplifies the build process with a single script.
 - **Modular Codebase**: Easy to extend and modify for custom applications.
 
