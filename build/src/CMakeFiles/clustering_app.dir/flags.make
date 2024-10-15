@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/scratch/users/md724/Clustering_Algorithms/igraph/install/include -I/scratch/users/md724/Clustering_Algorithms/libleidenalg/install/include
 
-CXX_FLAGS = -std=c++17
+CXX_FLAGS = -g -std=c++17
 
