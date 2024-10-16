@@ -80,6 +80,7 @@ clean: src/clean
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/clustering_app.dir/all
 src/all: src/CMakeFiles/example_runLeiden.dir/all
+src/all: src/CMakeFiles/validation_runLeiden.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -89,6 +90,7 @@ src/preinstall:
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/clustering_app.dir/clean
 src/clean: src/CMakeFiles/example_runLeiden.dir/clean
+src/clean: src/CMakeFiles/validation_runLeiden.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -142,6 +144,32 @@ example_runLeiden: src/CMakeFiles/example_runLeiden.dir/rule
 src/CMakeFiles/example_runLeiden.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/clean
 .PHONY : src/CMakeFiles/example_runLeiden.dir/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/validation_runLeiden.dir
+
+# All Build rule for target.
+src/CMakeFiles/validation_runLeiden.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/scratch/users/md724/Clustering_Algorithms/build/CMakeFiles --progress-num=7,8,9,10 "Built target validation_runLeiden"
+.PHONY : src/CMakeFiles/validation_runLeiden.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/validation_runLeiden.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /scratch/users/md724/Clustering_Algorithms/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/validation_runLeiden.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /scratch/users/md724/Clustering_Algorithms/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/validation_runLeiden.dir/rule
+
+# Convenience name for target.
+validation_runLeiden: src/CMakeFiles/validation_runLeiden.dir/rule
+.PHONY : validation_runLeiden
+
+# clean rule for target.
+src/CMakeFiles/validation_runLeiden.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/clean
+.PHONY : src/CMakeFiles/validation_runLeiden.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

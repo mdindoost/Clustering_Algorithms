@@ -28,3 +28,12 @@ target_link_libraries(example_runLeiden
     igraph
     libleidenalg
 )
+
+# Create executable for validation_runLeiden
+add_executable(validation_runLeiden metrics.cpp validation_runLeiden.cpp runLeiden.cpp)
+
+# Link libraries to validation_runLeiden
+target_link_libraries(validation_runLeiden
+    igraph
+    libleidenalg
+)

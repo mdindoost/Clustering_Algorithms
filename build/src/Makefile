@@ -144,6 +144,20 @@ example_runLeiden/fast:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/build
 .PHONY : example_runLeiden/fast
 
+# Convenience name for target.
+src/CMakeFiles/validation_runLeiden.dir/rule:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/validation_runLeiden.dir/rule
+.PHONY : src/CMakeFiles/validation_runLeiden.dir/rule
+
+# Convenience name for target.
+validation_runLeiden: src/CMakeFiles/validation_runLeiden.dir/rule
+.PHONY : validation_runLeiden
+
+# fast build rule for target.
+validation_runLeiden/fast:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/build
+.PHONY : validation_runLeiden/fast
+
 MyGraph.o: MyGraph.cpp.o
 .PHONY : MyGraph.o
 
@@ -216,12 +230,37 @@ main.cpp.s:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/clustering_app.dir/build.make src/CMakeFiles/clustering_app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+metrics.o: metrics.cpp.o
+.PHONY : metrics.o
+
+# target to build an object file
+metrics.cpp.o:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/metrics.cpp.o
+.PHONY : metrics.cpp.o
+
+metrics.i: metrics.cpp.i
+.PHONY : metrics.i
+
+# target to preprocess a source file
+metrics.cpp.i:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/metrics.cpp.i
+.PHONY : metrics.cpp.i
+
+metrics.s: metrics.cpp.s
+.PHONY : metrics.s
+
+# target to generate assembly for a file
+metrics.cpp.s:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/metrics.cpp.s
+.PHONY : metrics.cpp.s
+
 runLeiden.o: runLeiden.cpp.o
 .PHONY : runLeiden.o
 
 # target to build an object file
 runLeiden.cpp.o:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.o
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/runLeiden.cpp.o
 .PHONY : runLeiden.cpp.o
 
 runLeiden.i: runLeiden.cpp.i
@@ -230,6 +269,7 @@ runLeiden.i: runLeiden.cpp.i
 # target to preprocess a source file
 runLeiden.cpp.i:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.i
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/runLeiden.cpp.i
 .PHONY : runLeiden.cpp.i
 
 runLeiden.s: runLeiden.cpp.s
@@ -238,7 +278,32 @@ runLeiden.s: runLeiden.cpp.s
 # target to generate assembly for a file
 runLeiden.cpp.s:
 	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/example_runLeiden.dir/build.make src/CMakeFiles/example_runLeiden.dir/runLeiden.cpp.s
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/runLeiden.cpp.s
 .PHONY : runLeiden.cpp.s
+
+validation_runLeiden.o: validation_runLeiden.cpp.o
+.PHONY : validation_runLeiden.o
+
+# target to build an object file
+validation_runLeiden.cpp.o:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/validation_runLeiden.cpp.o
+.PHONY : validation_runLeiden.cpp.o
+
+validation_runLeiden.i: validation_runLeiden.cpp.i
+.PHONY : validation_runLeiden.i
+
+# target to preprocess a source file
+validation_runLeiden.cpp.i:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/validation_runLeiden.cpp.i
+.PHONY : validation_runLeiden.cpp.i
+
+validation_runLeiden.s: validation_runLeiden.cpp.s
+.PHONY : validation_runLeiden.s
+
+# target to generate assembly for a file
+validation_runLeiden.cpp.s:
+	cd /scratch/users/md724/Clustering_Algorithms/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/validation_runLeiden.dir/build.make src/CMakeFiles/validation_runLeiden.dir/validation_runLeiden.cpp.s
+.PHONY : validation_runLeiden.cpp.s
 
 # Help Target
 help:
@@ -250,6 +315,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... clustering_app"
 	@echo "... example_runLeiden"
+	@echo "... validation_runLeiden"
 	@echo "... MyGraph.o"
 	@echo "... MyGraph.i"
 	@echo "... MyGraph.s"
@@ -259,9 +325,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... metrics.o"
+	@echo "... metrics.i"
+	@echo "... metrics.s"
 	@echo "... runLeiden.o"
 	@echo "... runLeiden.i"
 	@echo "... runLeiden.s"
+	@echo "... validation_runLeiden.o"
+	@echo "... validation_runLeiden.i"
+	@echo "... validation_runLeiden.s"
 .PHONY : help
 
 
