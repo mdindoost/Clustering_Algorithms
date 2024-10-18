@@ -1,0 +1,5 @@
+/build/
+/igraph/install/
+/libleidenalg/install/
+CMakeCache.txt
+
