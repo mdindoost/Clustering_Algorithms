@@ -98,7 +98,7 @@ int main() {
 
     // Define clustering parameters
     std::string partitionType = "CPM"; // Options: "CPM", "RBConfiguration", "Modularity"
-    double resolution = 0.2;            // Resolution parameter for CPM
+    double resolution = 0.01;            // Resolution parameter for CPM
     int randomSeed = 42;                // Seed for reproducibility
     int iterations = 10;                // -1 for running until convergence
 
