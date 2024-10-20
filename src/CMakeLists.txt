@@ -8,8 +8,8 @@ include_directories(
 
 # Link directories for igraph and libleidenalg
 link_directories(
-    ${CMAKE_SOURCE_DIR}/igraph/install/lib64
-    ${CMAKE_SOURCE_DIR}/libleidenalg/install/lib64
+    ${CMAKE_SOURCE_DIR}/igraph/install/lib
+    ${CMAKE_SOURCE_DIR}/libleidenalg/install/lib
 )
 
 # Create executable
