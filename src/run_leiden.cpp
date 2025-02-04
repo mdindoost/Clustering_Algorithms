@@ -5,12 +5,12 @@
 #include "libleidenalg/ModularityVertexPartition.h"
 #include "libleidenalg/SignificanceVertexPartition.h"
 #include "libleidenalg/SurpriseVertexPartition.h"
+#include "libleidenalg/RBConfigurationVertexPartition.h"
+#include "libleidenalg/RBERVertexPartition.h"
 #include "run_leiden.h"
 
 void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int64_t NumNodes, 
                 int64_t modularity_option, float64_t resolution, int64_t communities[]) {
-
-
     
     igraph_t g;
     igraph_vector_int_t edges;
@@ -44,12 +44,17 @@ void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int6
         case SURPRISE:
             partition = new SurpriseVertexPartition(&graph);
             break;
+        case RBCONFIGURATION:
+            partition = new RBConfigurationVertexPartition(&graph, resolution);
+            break;
+        case RBER:
+            partition = new RBERVertexPartition(&graph, resolution);
+            break;
         default:
             std::cerr << "Error: Invalid modularity option selected." << std::endl;
             igraph_destroy(&g);
             return;
     }
-
 
     // Run Leiden optimization
     Optimiser optimiser;

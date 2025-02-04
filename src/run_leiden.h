@@ -3,7 +3,7 @@
 
 #include <cstdint>
 
-// Define float64_t manually if needed
+// Define float64_t explicitly if needed
 typedef double float64_t;
 
 // Modularity options as int64_t
@@ -11,7 +11,9 @@ enum ModularityType : int64_t {
     CPM,
     MODULARITY,
     SIGNIFICANCE,
-    SURPRISE
+    SURPRISE,
+    RBCONFIGURATION, // Reichardt & Bornholdt (Configuration null model)
+    RBER             // Reichardt & Bornholdt (Erdős–Rényi null model)
 };
 
 // Function to run Leiden clustering and store results in the `communities` array

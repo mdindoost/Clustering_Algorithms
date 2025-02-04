@@ -15,7 +15,8 @@ If you already cloned the repository without submodules, initialize and update t
 
 git submodule update --init --recursive
 
-2. Build and Install Dependencies
+### **2. Build and Install Dependencies**
+
 The project relies on igraph and libleidenalg. These are included as submodules and will be compiled automatically.
 
 Automatic Build Script (Recommended)

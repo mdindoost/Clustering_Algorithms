@@ -1,3 +1,0 @@
-/scratch/users/md724/Clustering_Algorithms/build/CMakeFiles/leiden_test.dir
-/scratch/users/md724/Clustering_Algorithms/build/CMakeFiles/edit_cache.dir
-/scratch/users/md724/Clustering_Algorithms/build/CMakeFiles/rebuild_cache.dir
