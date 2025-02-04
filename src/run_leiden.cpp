@@ -9,27 +9,30 @@
 #include "libleidenalg/RBERVertexPartition.h"
 #include "run_leiden.h"
 
-void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int64_t NumNodes, 
-                int64_t modularity_option, float64_t resolution, int64_t communities[], int64_t numCommunities) {
-    
+void run_leiden(
+    const int64_t src[], 
+    const int64_t dst[], 
+    int64_t NumEdges, 
+    int64_t NumNodes, 
+    int64_t modularity_option, 
+    float64_t resolution, 
+    int64_t communities[], 
+    int64_t numCommunities
+) {
     igraph_t g;
     igraph_vector_int_t edges;
     igraph_vector_int_init(&edges, NumEdges * 2);
 
-    // Fill igraph edges
     for (int64_t i = 0; i < NumEdges; i++) {
         VECTOR(edges)[2 * i] = src[i];
         VECTOR(edges)[2 * i + 1] = dst[i];
     }
 
-    // Create the graph
     igraph_create(&g, &edges, NumNodes, IGRAPH_DIRECTED);
     igraph_vector_int_destroy(&edges);
 
-    // Convert igraph_t to Leiden's Graph format
     Graph graph(&g);
 
-    // Choose the modularity method
     MutableVertexPartition* partition = nullptr;
     switch (modularity_option) {
         case CPM:
@@ -56,24 +59,37 @@ void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int6
             return;
     }
 
-    // Run Leiden optimization
     Optimiser optimiser;
     optimiser.optimise_partition(partition);
 
-    // Store results in the provided `communities[]` array
-    numCommunities = 0; // Initialize community count
+    numCommunities = 0;
     for (int64_t i = 0; i < NumNodes; i++) {
         communities[i] = partition->membership(i);
         if (communities[i] > numCommunities) {
-            numCommunities = communities[i]; // Track max community index
+            numCommunities = communities[i];
         }
     }
 
-    numCommunities += 1; // Convert max index to count
+    numCommunities += 1;
 
     std::cout << "Leiden clustering complete. Found " << numCommunities << " communities." << std::endl;
 
-    // Clean up
     delete partition;
     igraph_destroy(&g);
+}
+
+// C-compatible wrapper for Chapel
+int64_t c_runLeiden(
+    const int64_t src[], 
+    const int64_t dst[], 
+    int64_t NumEdges, 
+    int64_t NumNodes, 
+    int64_t modularity_option, 
+    float64_t resolution, 
+    int64_t communities[], 
+    int64_t numCommunities
+) {
+    std::cout << "Calling run_leiden from Chapel..." << std::endl;
+    run_leiden(src, dst, NumEdges, NumNodes, modularity_option, resolution, communities, numCommunities);
+    return numCommunities;
 }
