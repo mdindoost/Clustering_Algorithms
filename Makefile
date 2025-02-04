@@ -1,31 +1,40 @@
-# Compiler and flags
+# Compiler and Flags
 CXX = g++
-CXXFLAGS = -std=c++17 -Iexternal/install/include
-LDFLAGS = -Lexternal/install/lib64 -ligraph -llibleidenalg
+CFLAGS = -O3 -w -fPIC -I./external/install/include -I./external/install/include/igraph -c
+LDFLAGS = -L./external/install/lib64 -Wl,-rpath,$(PWD)/external/install/lib64 -ligraph -llibleidenalg
 
-# Source files
+# Directories
+BIN_DIR = bin
 SRC_DIR = src
-BUILD_DIR = build
-SRC_FILES = $(SRC_DIR)/leiden_wrapper.cpp $(SRC_DIR)/run_leiden.cpp
-OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(SRC_FILES))
-TARGET = $(BUILD_DIR)/leiden_test
+LIB_DIR = external/install/lib64
 
-# Default rule: Build the project
-all: $(TARGET)
+# Targets
+OBJECTS = $(BIN_DIR)/run_leiden.o
+EXECUTABLE = $(BIN_DIR)/leiden_test
 
-# Compile object files
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Default Target: Build both .o file and executable
+all: set_library_path $(OBJECTS) $(EXECUTABLE)
 
-# Link everything into the executable
-$(TARGET): $(OBJ_FILES)
-	$(CXX) $(OBJ_FILES) -o $(TARGET) $(LDFLAGS)
+# Set LD_LIBRARY_PATH dynamically
+set_library_path:
+	@export LD_LIBRARY_PATH=$(PWD)/$(LIB_DIR):$$LD_LIBRARY_PATH
+	@echo "LD_LIBRARY_PATH set to: $(PWD)/$(LIB_DIR)"
 
-# Clean build files
-clean:
-	rm -rf $(BUILD_DIR)
+# Compile run_leiden.cpp into an object file for Chapel
+$(BIN_DIR)/run_leiden.o: $(SRC_DIR)/run_leiden.cpp $(SRC_DIR)/run_leiden.h
+	@mkdir -p $(BIN_DIR)
+	$(CXX) $(CFLAGS) $< -o $@
 
-# Run the executable
+# Compile leiden_wrapper.cpp into an executable for testing
+$(BIN_DIR)/leiden_test: $(SRC_DIR)/leiden_wrapper.cpp $(SRC_DIR)/run_leiden.o
+	@mkdir -p $(BIN_DIR)
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+# Run the executable with correct LD_LIBRARY_PATH
 run: all
-	LD_LIBRARY_PATH=external/install/lib64:$(LD_LIBRARY_PATH) ./$(TARGET)
+	@LD_LIBRARY_PATH=$(PWD)/$(LIB_DIR) ./$(BIN_DIR)/leiden_test
+
+# Clean Build Artifacts
+clean:
+	@echo "Removing objects and executables..."
+	rm -f $(BIN_DIR)/*.o $(BIN_DIR)/leiden_test *.log src/*~ include/*~ *~ core
