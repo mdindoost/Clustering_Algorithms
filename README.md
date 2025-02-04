@@ -42,9 +42,7 @@ cmake --build . --target install
 cd ../../../
 
 2.2 Build and Install libleidenalg
-bash
-Copy
-Edit
+
 
 cd external/libleidenalg
 mkdir build
@@ -60,12 +58,11 @@ cd build
 cmake ..
 cmake --build .
 
-3. Run the Leiden Algorithm
+### **3. Run the Leiden Algorithm**
+
 Once everything is compiled, run the Leiden clustering test:
 
-bash
-Copy
-Edit
+
 ./build/leiden_test
 Expected output:
 
