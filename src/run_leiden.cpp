@@ -8,7 +8,7 @@
 #include "run_leiden.h"
 
 void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int64_t NumNodes, 
-                ModularityType modularity_option, double resolution, int64_t communities[]) {
+                int64_t modularity_option, float64_t resolution, int64_t communities[]) {
     
     igraph_t g;
     igraph_vector_int_t edges;
@@ -47,6 +47,7 @@ void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int6
             igraph_destroy(&g);
             return;
     }
+
 
     // Run Leiden optimization
     Optimiser optimiser;

@@ -14,7 +14,8 @@ int main() {
     int64_t communities[NumNodes];
 
     // Choose modularity method (e.g., CPM)
-    run_leiden(src, dst, NumEdges, NumNodes, CPM, 0.1, communities);
+    // run_leiden(src, dst, NumEdges, NumNodes, CPM, 0.1, communities);
+    run_leiden(src, dst, NumEdges, NumNodes, static_cast<int64_t>(CPM), static_cast<float64_t>(0.1), communities);
 
     // Print community assignments
     std::cout << "Community assignments:" << std::endl;
