@@ -10,7 +10,7 @@
 #include "run_leiden.h"
 
 void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int64_t NumNodes, 
-                int64_t modularity_option, float64_t resolution, int64_t communities[]) {
+                int64_t modularity_option, float64_t resolution, int64_t communities[], int64_t numCommunities) {
     
     igraph_t g;
     igraph_vector_int_t edges;
@@ -61,11 +61,17 @@ void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int6
     optimiser.optimise_partition(partition);
 
     // Store results in the provided `communities[]` array
+    numCommunities = 0; // Initialize community count
     for (int64_t i = 0; i < NumNodes; i++) {
         communities[i] = partition->membership(i);
+        if (communities[i] > numCommunities) {
+            numCommunities = communities[i]; // Track max community index
+        }
     }
 
-    std::cout << "Leiden clustering complete." << std::endl;
+    numCommunities += 1; // Convert max index to count
+
+    std::cout << "Leiden clustering complete. Found " << numCommunities << " communities." << std::endl;
 
     // Clean up
     delete partition;

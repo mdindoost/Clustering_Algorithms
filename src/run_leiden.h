@@ -12,12 +12,12 @@ enum ModularityType : int64_t {
     MODULARITY,
     SIGNIFICANCE,
     SURPRISE,
-    RBCONFIGURATION, // Reichardt & Bornholdt (Configuration null model)
-    RBER             // Reichardt & Bornholdt (Erdős–Rényi null model)
+    RBCONFIGURATION,
+    RBER
 };
 
 // Function to run Leiden clustering and store results in the `communities` array
 void run_leiden(const int64_t src[], const int64_t dst[], int64_t NumEdges, int64_t NumNodes, 
-                int64_t modularity_option, float64_t resolution, int64_t communities[]);
+                int64_t modularity_option, float64_t resolution, int64_t communities[], int64_t numCommunities);
 
 #endif // RUN_LEIDEN_H

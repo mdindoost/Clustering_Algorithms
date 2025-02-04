@@ -13,11 +13,14 @@ void test_modularity_option(int64_t modularity_option, const std::string& name) 
     // Array to store community assignments
     int64_t communities[NumNodes];
 
+    // Variable to store number of communities
+    int64_t numCommunities = 0;
+
     // Run Leiden with the selected modularity option
-    run_leiden(src, dst, NumEdges, NumNodes, modularity_option, static_cast<double>(0.1), communities);
+    run_leiden(src, dst, NumEdges, NumNodes, modularity_option, static_cast<double>(0.1), communities, numCommunities);
 
     // Print community assignments
-    std::cout << name << " Community Assignments:" << std::endl;
+    std::cout << name << " Community Assignments (" << numCommunities + 1 << " communities found):" << std::endl;
     for (int64_t i = 0; i < NumNodes; i++) {
         std::cout << "Node " << i << " -> Community " << communities[i] << std::endl;
     }
