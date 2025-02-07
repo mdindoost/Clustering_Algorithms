@@ -12,6 +12,9 @@ LIB_DIR = external/install/lib64
 OBJECTS = $(BIN_DIR)/run_leiden.o
 EXECUTABLE = $(BIN_DIR)/leiden_test
 
+# Add .SUFFIXES to disable implicit rules
+.SUFFIXES:
+
 # Default Target: Build both .o file and executable
 all: set_library_path $(OBJECTS) $(EXECUTABLE)
 
@@ -26,7 +29,7 @@ $(BIN_DIR)/run_leiden.o: $(SRC_DIR)/run_leiden.cpp $(SRC_DIR)/run_leiden.h
 	$(CXX) $(CFLAGS) $< -o $@
 
 # Compile leiden_wrapper.cpp into an executable for testing
-$(BIN_DIR)/leiden_test: $(SRC_DIR)/leiden_wrapper.cpp $(SRC_DIR)/run_leiden.o
+$(BIN_DIR)/leiden_test: $(SRC_DIR)/leiden_wrapper.cpp $(BIN_DIR)/run_leiden.o
 	@mkdir -p $(BIN_DIR)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
@@ -38,3 +41,6 @@ run: all
 clean:
 	@echo "Removing objects and executables..."
 	rm -f $(BIN_DIR)/*.o $(BIN_DIR)/leiden_test *.log src/*~ include/*~ *~ core
+
+# Rest of your Makefile stays the same, but add:
+.PHONY: clean set_library_path all run
