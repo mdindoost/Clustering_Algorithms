@@ -66,6 +66,7 @@ Once everything is compiled, run the Leiden clustering test:
 ./build/leiden_test
 Expected output:
 
+./bin/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
 
 Starting Leiden algorithm...
 Leiden clustering complete.
