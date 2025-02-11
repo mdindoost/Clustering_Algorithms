@@ -18,3 +18,4 @@ target_link_libraries(leiden_test
     ${CMAKE_SOURCE_DIR}/external/install/lib64/libigraph.a
     ${CMAKE_SOURCE_DIR}/external/install/lib64/liblibleidenalg.so
 )
+
