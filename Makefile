@@ -10,10 +10,10 @@ LIB_DIR = external/install/lib64
 
 # Targets
 OBJECTS = $(BIN_DIR)/run_leiden.o
-EXECUTABLE = $(BIN_DIR)/leiden_test
+EXECUTABLES = $(BIN_DIR)/leiden_test $(BIN_DIR)/leiden_clustering
 
-# Default Target: Build both .o file and executable
-all: set_library_path $(OBJECTS) $(EXECUTABLE)
+# Default Target: Build both .o file and executables
+all: set_library_path $(OBJECTS) $(EXECUTABLES)
 
 # Set LD_LIBRARY_PATH dynamically
 set_library_path:
@@ -26,15 +26,20 @@ $(BIN_DIR)/run_leiden.o: $(SRC_DIR)/run_leiden.cpp $(SRC_DIR)/run_leiden.h
 	$(CXX) $(CFLAGS) $< -o $@
 
 # Compile leiden_wrapper.cpp into an executable for testing
-$(BIN_DIR)/leiden_test: $(SRC_DIR)/leiden_wrapper.cpp $(SRC_DIR)/run_leiden.o
+$(BIN_DIR)/leiden_test: $(SRC_DIR)/leiden_wrapper.cpp $(BIN_DIR)/run_leiden.o
 	@mkdir -p $(BIN_DIR)
 	$(CXX) -o $@ $^ $(LDFLAGS)
 
-# Run the executable with correct LD_LIBRARY_PATH
+# Compile leiden_clustering.cpp into an executable
+$(BIN_DIR)/leiden_clustering: $(SRC_DIR)/leiden_clustering.cpp $(BIN_DIR)/run_leiden.o
+	@mkdir -p $(BIN_DIR)
+	$(CXX) -o $@ $^ $(LDFLAGS)
+
+# Run the test executable with correct LD_LIBRARY_PATH
 run: all
 	@LD_LIBRARY_PATH=$(PWD)/$(LIB_DIR) ./$(BIN_DIR)/leiden_test
 
 # Clean Build Artifacts
 clean:
 	@echo "Removing objects and executables..."
-	rm -f $(BIN_DIR)/*.o $(BIN_DIR)/leiden_test *.log src/*~ include/*~ *~ core
+	rm -f $(BIN_DIR)/*.o $(BIN_DIR)/leiden_test $(BIN_DIR)/leiden_clustering *.log src/*~ include/*~ *~ core

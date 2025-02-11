@@ -8,7 +8,7 @@ This repository provides an implementation of clustering algorithms, including a
 To get started, clone this repository along with its submodules:
 
 ```bash
-git clone --recursive https://github.com/yourusername/Clustering_Algorithms.git
+git clone --recursive https://github.com/mdindoost/Clustering_Algorithms.git
 cd Clustering_Algorithms
 
 If you already cloned the repository without submodules, initialize and update them manually:
