@@ -73,3 +73,13 @@ Expected output:
 
 Starting Leiden algorithm...
 Leiden clustering complete.
+```
+
+## Wulver users
+If you faced any problem you can do something like this to modify your environment to include the library paths:
+```bash
+export LD_LIBRARY_PATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LIBRARY_PATH
+export CPATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/include:$CPATH
+```
+
