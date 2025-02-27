@@ -1,0 +1,13 @@
+prefix=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install
+exec_prefix=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install
+libdir=${exec_prefix}/lib64
+includedir=${prefix}/include
+
+Name: libigraph
+Description: A library for creating and manipulating graphs
+Version: 0.10.15
+URL: https://igraph.org
+Libs: -L${libdir} -ligraph
+Libs.private: -lm -lstdc++ -lblas -llapack -lgomp -lpthread
+Requires.private:  libxml-2.0
+Cflags: -I${includedir}/igraph
