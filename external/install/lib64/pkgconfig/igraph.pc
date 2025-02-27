@@ -1,5 +1,5 @@
-prefix=/scratch/users/md724/Clustering_Algorithms/external/install
-exec_prefix=/scratch/users/md724/Clustering_Algorithms/external/install
+prefix=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install
+exec_prefix=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install
 libdir=${exec_prefix}/lib64
 includedir=${prefix}/include
 
@@ -8,6 +8,6 @@ Description: A library for creating and manipulating graphs
 Version: 0.10.15
 URL: https://igraph.org
 Libs: -L${libdir} -ligraph
-Libs.private: -lm -lstdc++ -lgmp -lgomp -lpthread
-Requires.private: 
+Libs.private: -lm -lstdc++ -lblas -llapack -lgomp -lpthread
+Requires.private:  libxml-2.0
 Cflags: -I${includedir}/igraph

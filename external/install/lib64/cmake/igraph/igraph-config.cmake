@@ -13,7 +13,7 @@
 set(IGRAPH_VERSION "0.10.15")
 set(IGRAPH_INTEGER_SIZE 64)
 set(IGRAPH_GLPK_SUPPORT ON)
-set(IGRAPH_GRAPHML_SUPPORT OFF)
+set(IGRAPH_GRAPHML_SUPPORT ON)
 
 ####### Expanded from @PACKAGE_INIT@ by configure_package_config_file() #######
 ####### Any changes to this file will be overwritten by the next CMake run ####

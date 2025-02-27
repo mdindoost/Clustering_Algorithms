@@ -9,15 +9,15 @@
 #  ifndef IGRAPH_EXPORT
 #    ifdef igraph_EXPORTS
         /* We are building this library */
-#      define IGRAPH_EXPORT 
+#      define IGRAPH_EXPORT __attribute__((visibility("default")))
 #    else
         /* We are using this library */
-#      define IGRAPH_EXPORT 
+#      define IGRAPH_EXPORT __attribute__((visibility("default")))
 #    endif
 #  endif
 
 #  ifndef IGRAPH_NO_EXPORT
-#    define IGRAPH_NO_EXPORT 
+#    define IGRAPH_NO_EXPORT __attribute__((visibility("hidden")))
 #  endif
 #endif
 

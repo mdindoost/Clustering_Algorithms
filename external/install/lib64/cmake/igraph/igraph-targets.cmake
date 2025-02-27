@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.24)
+cmake_policy(VERSION 2.8.3...3.25)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -56,12 +56,11 @@ if(_IMPORT_PREFIX STREQUAL "/")
 endif()
 
 # Create imported target igraph::igraph
-add_library(igraph::igraph STATIC IMPORTED)
+add_library(igraph::igraph SHARED IMPORTED)
 
 set_target_properties(igraph::igraph PROPERTIES
-  INTERFACE_COMPILE_DEFINITIONS "IGRAPH_STATIC"
   INTERFACE_INCLUDE_DIRECTORIES "${_IMPORT_PREFIX}/include/igraph;${_IMPORT_PREFIX}/include"
-  INTERFACE_LINK_LIBRARIES "/usr/lib64/libm.so;/usr/lib64/libgmp.so;\$<LINK_ONLY:igraph::bliss>;\$<LINK_ONLY:igraph::cliquer>;\$<LINK_ONLY:igraph::cxsparse_vendored>;\$<LINK_ONLY:igraph::pcg>;\$<LINK_ONLY:igraph::prpack>"
+  INTERFACE_LINK_LIBRARIES "/usr/lib64/libm.so"
 )
 
 # Create imported target igraph::bliss

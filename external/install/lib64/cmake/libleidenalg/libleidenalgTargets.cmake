@@ -7,7 +7,7 @@ if(CMAKE_VERSION VERSION_LESS "2.8.3")
    message(FATAL_ERROR "CMake >= 2.8.3 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.8.3...3.24)
+cmake_policy(VERSION 2.8.3...3.25)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -69,6 +69,11 @@ if(NOT CMAKE_VERSION VERSION_LESS "3.23.0")
       TYPE "HEADERS"
       BASE_DIRS "${_IMPORT_PREFIX}/include/libleidenalg"
       FILES "${_IMPORT_PREFIX}/include/libleidenalg/libleidenalg_export.h" "${_IMPORT_PREFIX}/include/libleidenalg/Optimiser.h" "${_IMPORT_PREFIX}/include/libleidenalg/GraphHelper.h" "${_IMPORT_PREFIX}/include/libleidenalg/MutableVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/ModularityVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/SignificanceVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/SurpriseVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/ResolutionParameterVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/LinearResolutionParameterVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/CPMVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/RBConfigurationVertexPartition.h" "${_IMPORT_PREFIX}/include/libleidenalg/RBERVertexPartition.h"
+  )
+else()
+  set_property(TARGET libleidenalg::libleidenalg
+    APPEND PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+      "${_IMPORT_PREFIX}/include/libleidenalg"
   )
 endif()
 
