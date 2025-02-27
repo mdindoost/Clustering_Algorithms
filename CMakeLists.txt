@@ -23,3 +23,4 @@ target_link_libraries(leiden_clustering
     ${CMAKE_SOURCE_DIR}/external/install/lib64/liblibleidenalg.so
 )
 
+#test
