@@ -62,17 +62,17 @@ void run_leiden(
     Optimiser optimiser;
     optimiser.optimise_partition(partition);
 
-    numCommunities = 0;
-    for (int64_t i = 0; i < NumNodes; i++) {
-        communities[i] = partition->membership(i);
-        if (communities[i] > numCommunities) {
-            numCommunities = communities[i];
-        }
-    }
+    // numCommunities = 0;
+    // for (int64_t i = 0; i < NumNodes; i++) {
+    //     communities[i] = partition->membership(i);
+    //     if (communities[i] > numCommunities) {
+    //         numCommunities = communities[i];
+    //     }
+    // }
 
-    numCommunities += 1;
+    // numCommunities += 1;
 
-    std::cout << "Leiden clustering complete. Found " << numCommunities << " communities." << std::endl;
+    //std::cout << "Leiden clustering complete. Found " << numCommunities << " communities." << std::endl;
 
     delete partition;
     igraph_destroy(&g);
@@ -89,7 +89,7 @@ int64_t c_runLeiden(
     int64_t communities[], 
     int64_t numCommunities
 ) {
-    std::cout << "Calling run_leiden from Chapel..." << std::endl;
+    //std::cout << "Calling run_leiden from Chapel..." << std::endl;
     run_leiden(src, dst, NumEdges, NumNodes, modularity_option, resolution, communities, numCommunities);
     return numCommunities;
 }

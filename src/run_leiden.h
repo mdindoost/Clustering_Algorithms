@@ -1,7 +1,7 @@
 #ifndef RUN_LEIDEN_H
 #define RUN_LEIDEN_H
 
-#include <cstdint>
+#include <stdint.h>
 
 typedef double float64_t;
 
