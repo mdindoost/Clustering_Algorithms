@@ -22,6 +22,9 @@ The project relies on igraph and libleidenalg. These are included as submodules 
 Automatic Build Script (Recommended)
 Run the following script to build everything at once:
 
+make sure you loaded the intel module
+module load intel
+
 bash setup.sh
 
 This script will:
