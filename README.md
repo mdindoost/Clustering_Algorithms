@@ -83,6 +83,20 @@ Leiden clustering complete.
 
 
 ## Wulver users
+Make sure you load 
+```bash
+module load intel
+module load imkl/2023.2.0
+```
+
+use Makefile for compliation:
+
+```bash
+Make clean
+make
+```
+
+
 If you faced any problem you can do something like this to modify your environment to include the library paths:
 ```bash
 export LD_LIBRARY_PATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LD_LIBRARY_PATH

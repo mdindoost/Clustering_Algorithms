@@ -12,16 +12,10 @@ LIB_DIR = external/install/lib64
 OBJECTS = $(BIN_DIR)/run_leiden.o
 EXECUTABLES = $(BIN_DIR)/leiden_test $(BIN_DIR)/leiden_clustering
 
-<<<<<<< HEAD
 # Default Target: Build both .o file and executables
 all: set_library_path $(OBJECTS) $(EXECUTABLES)
-=======
 # Add .SUFFIXES to disable implicit rules
 .SUFFIXES:
-
-# Default Target: Build both .o file and executable
-all: set_library_path $(OBJECTS) $(EXECUTABLE)
->>>>>>> my-detached-work
 
 # Set LD_LIBRARY_PATH dynamically
 set_library_path:
