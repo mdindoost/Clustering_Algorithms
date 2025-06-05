@@ -30,7 +30,7 @@ void run_leiden(
         VECTOR(edges)[2 * i + 1] = dst[i];
     }
 
-    igraph_create(&g, &edges, NumNodes, IGRAPH_UNDIRECTED);
+    igraph_create(&g, &edges, NumNodes, IGRAPH_DIRECTED);
     igraph_vector_int_destroy(&edges);
 
     Graph graph(&g);
