@@ -26,7 +26,7 @@ Run the following script to build everything at once:
 make sure you loaded the intel module
 ```bash
 module load intel
-
+module load CMake/3.31.3
 bash setup.sh
 ```
 This script will:
