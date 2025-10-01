@@ -76,7 +76,7 @@ Once everything is compiled, run the Leiden clustering test:
 Expected output:
 ```bash
 
-./bin/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
+./build/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
 ```
 Starting Leiden algorithm...
 Leiden clustering complete.
