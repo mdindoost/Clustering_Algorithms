@@ -96,6 +96,7 @@ Make clean
 make
 ```
 
+## Arachne users
 
 If you faced any problem you can do something like this to modify your environment to include the library paths:
 ```bash
