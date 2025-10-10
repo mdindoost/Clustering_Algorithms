@@ -26,7 +26,7 @@ Run the following script to build everything at once:
 make sure you loaded the intel module
 ```bash
 module load intel
-
+module load CMake/3.31.3
 bash setup.sh
 ```
 This script will:
@@ -76,7 +76,7 @@ Once everything is compiled, run the Leiden clustering test:
 Expected output:
 ```bash
 
-./bin/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
+./build/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
 ```
 Starting Leiden algorithm...
 Leiden clustering complete.
@@ -99,8 +99,16 @@ make
 
 If you faced any problem you can do something like this to modify your environment to include the library paths:
 ```bash
-export LD_LIBRARY_PATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LD_LIBRARY_PATH
-export LIBRARY_PATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LIBRARY_PATH
-export CPATH=/home/md724/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/include:$CPATH
+export LD_LIBRARY_PATH=/home/$USER/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/home/$USER/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/lib64:$LIBRARY_PATH
+export CPATH=/home/$USER/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/include:$CPATH
 ```
 
+## Run with Apptainer on Wulver
+
+You can run the project using **Apptainer** on the Wulver system with the following commands:
+
+```bash
+module load apptainer
+apptainer pull cluster-algorithm.sif docker://spoiler2400/cluster-algorithm:1.0.0
+apptainer exec cluster-algorithm.sif /app/build/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
