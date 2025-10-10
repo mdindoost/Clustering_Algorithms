@@ -82,7 +82,7 @@ Starting Leiden algorithm...
 Leiden clustering complete.
 
 
-## Wulver users
+## Wulver setup
 Make sure you load 
 ```bash
 module load intel
