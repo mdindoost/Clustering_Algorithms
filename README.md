@@ -104,3 +104,11 @@ export LIBRARY_PATH=/home/$USER/arkouda-njit/arachne/server/Clustering_Algorithm
 export CPATH=/home/$USER/arkouda-njit/arachne/server/Clustering_Algorithms/external/install/include:$CPATH
 ```
 
+## Run with Apptainer on Wulver
+
+You can run the project using **Apptainer** on the Wulver system with the following commands:
+
+```bash
+module load apptainer
+apptainer pull cluster-algorithm.sif docker://spoiler2400/cluster-algorithm:1.0.0
+apptainer exec cluster-algorithm.sif /app/build/leiden_clustering -t cpm -r 0.5 input.tsv output.tsv
