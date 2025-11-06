@@ -288,6 +288,10 @@ int main(int argc, char** argv) {
         // Normalize to 0..C-1 (then we’ll output 1-indexed)
         IGRAPH_CHECK(igraph_reindex_membership(&membership, /*new_to_old=*/nullptr, &nb_clusters));
 
+        // std::cout << "Leiden clustering complete. Found " << static_cast<long long>(nb_clusters) << " communities." << std::endl;
+        std::cout << "Leiden clustering complete. Found " << static_cast<long long>(nb_clusters)
+            << " communities. Quality=" << quality << std::endl;
+
         // ----- TSV output (node_id \t community_1indexed) -----
         fs::path outdir = dataset_path / mode;
         fs::create_directories(outdir);
