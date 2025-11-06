@@ -4,3 +4,6 @@
 [submodule "external/igraph"]
 	path = external/igraph
 	url = https://github.com/igraph/igraph.git
+[submodule "external/arrow"]
+	path = external/arrow
+	url = https://github.com/apache/arrow
