@@ -222,9 +222,16 @@ Expected output (cluster assignments will vary):
 3   0
 4   0
 ```
+## Rebuild and run
+```bash
 
+cd build
+cmake --build . --target leiden_igraph -j
+cd ..
+```
 This confirms the new Leiden binary runs successfully on a small undirected graph.
 
 ---
+
 
 *Maintained by Mohammad Dindoost — NJIT, Bader Lab.*
