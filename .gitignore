@@ -1,6 +1,17 @@
-bin/*
-build/*
-*.tsv
-*.bak
+# Build and install artifacts
+/build/
+/external/install/
+/external/igraph/build/
+/external/arrow/cpp/build/
+/external/libleidenalg/build/
 
+# Runtime outputs
+/CPM/
+/modularity/
+/logs/
+/*.tsv
+/*.json
 
+# System/editor noise
+*.swp
+*.DS_Store
