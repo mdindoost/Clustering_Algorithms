@@ -15,3 +15,10 @@
 # System/editor noise
 *.swp
 *.DS_Store
+/build/
+/external/install/
+/CMakeFiles/
+/CMakeCache.txt
+*.so
+*.a
+*.o
