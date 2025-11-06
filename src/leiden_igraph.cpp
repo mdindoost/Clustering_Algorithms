@@ -291,6 +291,41 @@ int main(int argc, char** argv) {
         // std::cout << "Leiden clustering complete. Found " << static_cast<long long>(nb_clusters) << " communities." << std::endl;
         std::cout << "Leiden clustering complete. Found " << static_cast<long long>(nb_clusters)
             << " communities. Quality=" << quality << std::endl;
+        
+        // Compute cluster sizes
+        std::vector<long long> cluster_sizes(nb_clusters, 0);
+        for (igraph_integer_t i = 0; i < igraph_vcount(&G); ++i) {
+            int cid = VECTOR(membership)[i];
+            if (cid >= 0 && cid < nb_clusters)
+                cluster_sizes[cid]++;
+        }
+
+        // Print summary of cluster sizes
+        // std::cout << "Cluster sizes:" << std::endl;
+        // for (igraph_integer_t cid = 0; cid < nb_clusters; ++cid) {
+        //     std::cout << "  Cluster " << cid << ": " << cluster_sizes[cid] << " vertices" << std::endl;
+        // }
+
+        auto [min_it, max_it] = std::minmax_element(cluster_sizes.begin(), cluster_sizes.end());
+        long long total = 0;
+        for (auto s : cluster_sizes) total += s;
+        double avg = static_cast<double>(total) / nb_clusters;
+        std::cout << "Smallest cluster: " << *min_it
+                << ", Largest: " << *max_it
+                << ", Average size: " << avg << std::endl;
+
+        // Build histogram: how many clusters have a given size
+        std::unordered_map<long long, long long> size_hist;
+        for (auto s : cluster_sizes) size_hist[s]++;
+
+        // Sort sizes for pretty output
+        std::vector<std::pair<long long, long long>> sorted_hist(size_hist.begin(), size_hist.end());
+        std::sort(sorted_hist.begin(), sorted_hist.end());
+
+        std::cout << "Cluster size distribution:" << std::endl;
+        for (auto [size, count] : sorted_hist) {
+            std::cout << "  Clusters with size " << size << ": " << count << std::endl;
+        }
 
         // ----- TSV output (node_id \t community_1indexed) -----
         fs::path outdir = dataset_path / mode;
