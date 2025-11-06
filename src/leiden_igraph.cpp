@@ -1,5 +1,5 @@
 // Leiden clustering in C++ using igraph (C API) + Apache Arrow/Parquet
-// - Reads edges from either TSV/CSV (two integer columns) or Parquet (two integer columns)
+// Reads edges from either TSV/CSV (two integer columns) or Parquet (two integer columns)
 
 
 #include <algorithm>
@@ -173,23 +173,69 @@ static void build_graph_from_edges(const std::vector<Edge>& edges_raw, igraph_t*
 // ---------- Main ----------
 
 int main(int argc, char** argv) {
-    if (argc < 6) {
-        std::cerr << "Usage: " << argv[0]
-                  << " <input.{tsv|csv|parquet}> <dataset_path> <dataset_name> <objective: modularity|CPM> <resolution> [--directed]\n";
+    auto print_usage = [&](const char* prog){
+        std::cerr
+          << "Usage (old): " << prog
+          << " <input.{tsv|csv|parquet}> <output_dir> <dataset_name> <objective: modularity|cpm> <resolution> [--directed]\n"
+          << "Usage (new): " << prog
+          << " <input.{tsv|csv|parquet}> <output_dir> <objective: modularity|cpm> <resolution> [--directed]\n"
+          << "Notes:\n"
+          << "  - New form omits <dataset_name>; defaults to 'default_dataset'.\n"
+          << "  - Graph is UNDIRECTED by default. Pass --directed to force (Leiden in igraph will error).\n"
+          << "  - Output TSV: <output_dir>/<objective>/leiden_results.tsv (1-indexed community IDs)\n";
+    };
+
+    // --help
+    if (argc == 2 && (std::string(argv[1]) == "--help" || std::string(argv[1]) == "-h")) {
+        print_usage(argv[0]);
+        return 0;
+    }
+
+    if (argc < 5) {
+        print_usage(argv[0]);
         return 1;
     }
 
     const fs::path input_path = argv[1];
     const fs::path dataset_path = argv[2];
-    const std::string dataset_name = argv[3];
-    std::string objective = argv[4];
-    double resolution = std::stod(argv[5]);
 
-    // Default: undirected (per request). Pass --directed to flip.
-    bool directed = false;
-    for (int i=6; i<argc; ++i) if (std::string(argv[i]) == "--directed") directed = true;
+    // We accept either:
+    //   old: argv[3]=dataset_name, argv[4]=objective, argv[5]=resolution
+    //   new:               (no dataset_name) argv[3]=objective, argv[4]=resolution
+    std::string dataset_name = "default_dataset";
+    std::string objective;
+    double resolution = 1.0;
+
+    auto to_lower = [](std::string s){
+        std::transform(s.begin(), s.end(), s.begin(),
+                       [](unsigned char c){ return std::tolower(c); });
+        return s;
+    };
+
+    // Try to detect whether argv[3] is an objective or a dataset name
+    if (argc >= 6) {
+        // Old form present (we have at least 6 args)
+        dataset_name = argv[3];
+        objective = argv[4];
+        resolution = std::stod(argv[5]);
+        // optional flags start at 6
+    } else {
+        // New form (no dataset name)
+        objective = argv[3];
+        resolution = std::stod(argv[4]);
+        // optional flags start at 5
+    }
+
+    bool directed = false; // default UNDIRECTED
+    for (int i = (argc >= 6 ? 6 : 5); i < argc; ++i) {
+        const std::string flag = argv[i];
+        if (flag == "--directed") directed = true;
+        if (flag == "--undirected") directed = false;
+        if (flag == "--help" || flag == "-h") { print_usage(argv[0]); return 0; }
+    }
 
     std::transform(objective.begin(), objective.end(), objective.begin(), [](unsigned char c){return std::tolower(c);});
+    objective = to_lower(objective);
     std::string mode = (objective == "modularity") ? "modularity" : "CPM"; // default CPM if unknown
 
     try {
@@ -220,7 +266,9 @@ int main(int argc, char** argv) {
         //                         start, n_iterations, membership, nb_clusters, quality)
         const igraph_real_t beta = 0.01;
         const igraph_bool_t start = 0;
-        const igraph_integer_t n_iterations = -1; // until stable
+        //const igraph_integer_t n_iterations = -1; // until stable
+        const igraph_integer_t n_iterations = 50; // cap to avoid rare stalls
+
         igraph_integer_t nb_clusters = 0;
         igraph_real_t quality = 0.0;
 
