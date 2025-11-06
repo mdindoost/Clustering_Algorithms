@@ -206,8 +206,11 @@ echo -e "0	1
 2	3
 3	4
 4	0" > edges.tsv
-./build/leiden_igraph edges.tsv . test_dataset modularity 1.0
-OR: ./build/leiden_igraph edges.tsv . modularity 1.0
+# New (no dataset name)
+./build/leiden_igraph edges.tsv . modularity 1.0
+
+# Old (still works)
+./build/leiden_igraph edges.tsv . my_dataset cpm 0.5
 cat modularity/leiden_results.tsv
 ```
 
