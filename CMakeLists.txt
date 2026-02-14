@@ -72,3 +72,25 @@ endif()
 
 # igraph is a plain library in your tree; link it directly
 target_link_libraries(leiden_igraph PRIVATE igraph)
+
+# -------------------------
+# Conversion utility for binary CSR
+# -------------------------
+add_executable(convert_to_bcsr src/convert_to_bcsr.cpp)
+
+target_include_directories(convert_to_bcsr PRIVATE
+  ${CMAKE_SOURCE_DIR}/external/install/include
+)
+
+# Link Arrow for Parquet support (optional, falls back gracefully)
+if(TARGET Arrow::arrow)
+  target_link_libraries(convert_to_bcsr PRIVATE Arrow::arrow)
+else()
+  target_link_libraries(convert_to_bcsr PRIVATE ${ARROW_LIB})
+endif()
+
+if(TARGET Parquet::parquet)
+  target_link_libraries(convert_to_bcsr PRIVATE Parquet::parquet)
+else()
+  target_link_libraries(convert_to_bcsr PRIVATE ${PARQUET_LIB})
+endif()
