@@ -1,5 +1,5 @@
 // Leiden clustering in C++ using igraph (C API) + Apache Arrow/Parquet
-// Reads edges from either TSV/CSV (two integer columns) or Parquet (two integer columns)
+// Reads edges from either TSV/CSV (two integer columns), Parquet (two integer columns), or CSR format
 
 
 #include <algorithm>
@@ -134,6 +134,154 @@ static std::vector<Edge> read_tsv_edges(const fs::path& path) {
     return edges;
 }
 
+// ---------- CSR reader ----------
+
+struct CSRGraph {
+    std::vector<long long> row_ptr;  // size: n+1
+    std::vector<long long> col_idx;  // size: nnz
+    long long n_vertices;
+    long long n_edges;
+};
+
+static CSRGraph read_csr_file(const fs::path& path) {
+    std::ifstream fin(path);
+    if (!fin) throw std::runtime_error("Cannot open CSR file: " + path.string());
+    
+    CSRGraph csr;
+    std::string line;
+    
+    // First line: number of vertices
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing vertex count");
+    long long n_vertices;
+    if (!parse_ll(line, n_vertices)) throw std::runtime_error("CSR file: invalid vertex count");
+    csr.n_vertices = n_vertices;
+    
+    // Second line: number of edges (non-zeros)
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing edge count");
+    long long n_edges;
+    if (!parse_ll(line, n_edges)) throw std::runtime_error("CSR file: invalid edge count");
+    csr.n_edges = n_edges;
+    
+    // Third line: row_ptr array (n_vertices+1 elements)
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing row_ptr");
+    auto row_tokens = split_ws(line);
+    if (row_tokens.size() != static_cast<size_t>(n_vertices + 1)) {
+        throw std::runtime_error("CSR file: row_ptr size mismatch, expected " + 
+                               std::to_string(n_vertices + 1) + ", got " + std::to_string(row_tokens.size()));
+    }
+    csr.row_ptr.reserve(n_vertices + 1);
+    for (const auto& tok : row_tokens) {
+        long long val;
+        if (!parse_ll(tok, val)) throw std::runtime_error("CSR file: invalid row_ptr value");
+        csr.row_ptr.push_back(val);
+    }
+    
+    // Fourth line: col_idx array (n_edges elements)
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing col_idx");
+    auto col_tokens = split_ws(line);
+    if (col_tokens.size() != static_cast<size_t>(n_edges)) {
+        throw std::runtime_error("CSR file: col_idx size mismatch, expected " + 
+                               std::to_string(n_edges) + ", got " + std::to_string(col_tokens.size()));
+    }
+    csr.col_idx.reserve(n_edges);
+    for (const auto& tok : col_tokens) {
+        long long val;
+        if (!parse_ll(tok, val)) throw std::runtime_error("CSR file: invalid col_idx value");
+        csr.col_idx.push_back(val);
+    }
+    
+    return csr;
+}
+
+static std::vector<Edge> csr_to_edges(const CSRGraph& csr) {
+    std::vector<Edge> edges;
+    edges.reserve(csr.n_edges);
+    
+    for (long long i = 0; i < csr.n_vertices; ++i) {
+        long long start = csr.row_ptr[i];
+        long long end = csr.row_ptr[i + 1];
+        for (long long j = start; j < end; ++j) {
+            edges.push_back({i, csr.col_idx[j]});
+        }
+    }
+    
+    return edges;
+}
+
+// ---------- CSR writer for subgraphs ----------
+
+static void write_csr_subgraph(const fs::path& path, const igraph_t* g, 
+                               const std::vector<igraph_integer_t>& subgraph_vids,
+                               const std::vector<long long>& inv_map) {
+    // Create a mapping from original vertex IDs to subgraph indices
+    std::unordered_map<igraph_integer_t, long long> vid_to_idx;
+    for (size_t i = 0; i < subgraph_vids.size(); ++i) {
+        vid_to_idx[subgraph_vids[i]] = static_cast<long long>(i);
+    }
+    
+    long long n_vertices = static_cast<long long>(subgraph_vids.size());
+    
+    // Build CSR structure for subgraph
+    std::vector<long long> row_ptr(n_vertices + 1, 0);
+    std::vector<long long> col_idx;
+    
+    // For each vertex in the subgraph, find its neighbors that are also in the subgraph
+    for (size_t i = 0; i < subgraph_vids.size(); ++i) {
+        igraph_integer_t vid = subgraph_vids[i];
+        igraph_vector_int_t neighbors;
+        igraph_vector_int_init(&neighbors, 0);
+        
+        // Get neighbors of this vertex
+        igraph_neighbors(g, &neighbors, vid, IGRAPH_ALL);
+        
+        // Count and add neighbors that are in the subgraph
+        for (long j = 0; j < igraph_vector_int_size(&neighbors); ++j) {
+            igraph_integer_t neighbor = VECTOR(neighbors)[j];
+            auto it = vid_to_idx.find(neighbor);
+            if (it != vid_to_idx.end()) {
+                col_idx.push_back(it->second);
+            }
+        }
+        
+        row_ptr[i + 1] = static_cast<long long>(col_idx.size());
+        igraph_vector_int_destroy(&neighbors);
+    }
+    
+    long long n_edges = static_cast<long long>(col_idx.size());
+    
+    // Write CSR to file
+    std::ofstream fout(path);
+    if (!fout) throw std::runtime_error("Cannot open CSR output file: " + path.string());
+    
+    // Line 1: number of vertices
+    fout << n_vertices << '\n';
+    
+    // Line 2: number of edges
+    fout << n_edges << '\n';
+    
+    // Line 3: row_ptr array
+    for (size_t i = 0; i < row_ptr.size(); ++i) {
+        if (i > 0) fout << ' ';
+        fout << row_ptr[i];
+    }
+    fout << '\n';
+    
+    // Line 4: col_idx array
+    for (size_t i = 0; i < col_idx.size(); ++i) {
+        if (i > 0) fout << ' ';
+        fout << col_idx[i];
+    }
+    fout << '\n';
+    
+    // Optional: Line 5: original vertex IDs mapping
+    fout << "# Original vertex IDs: ";
+    for (size_t i = 0; i < subgraph_vids.size(); ++i) {
+        if (i > 0) fout << ' ';
+        fout << inv_map[subgraph_vids[i]];
+    }
+    fout << '\n';
+}
+
 // ---------- Graph build with robust remap ----------
 
 static void build_graph_from_edges(const std::vector<Edge>& edges_raw, igraph_t* g, bool directed,
@@ -176,13 +324,15 @@ int main(int argc, char** argv) {
     auto print_usage = [&](const char* prog){
         std::cerr
           << "Usage (old): " << prog
-          << " <input.{tsv|csv|parquet}> <output_dir> <dataset_name> <objective: modularity|cpm> <resolution> [--directed]\n"
+          << " <input.{tsv|csv|parquet|csr}> <output_dir> <dataset_name> <objective: modularity|cpm> <resolution> [--directed]\n"
           << "Usage (new): " << prog
-          << " <input.{tsv|csv|parquet}> <output_dir> <objective: modularity|cpm> <resolution> [--directed]\n"
+          << " <input.{tsv|csv|parquet|csr}> <output_dir> <objective: modularity|cpm> <resolution> [--directed]\n"
           << "Notes:\n"
           << "  - New form omits <dataset_name>; defaults to 'default_dataset'.\n"
           << "  - Graph is UNDIRECTED by default. Pass --directed to force (Leiden in igraph will error).\n"
-          << "  - Output TSV: <output_dir>/<objective>/leiden_results.tsv (1-indexed community IDs)\n";
+          << "  - Output TSV: <output_dir>/<objective>/leiden_results.tsv (1-indexed community IDs)\n"
+          << "  - CSR format: Line 1: n_vertices, Line 2: n_edges, Line 3: row_ptr (n+1 values), Line 4: col_idx (nnz values)\n"
+          << "  - Cluster subgraphs: <output_dir>/<objective>/cluster_<id>.csr for each cluster\n";
     };
 
     // --help
@@ -246,6 +396,11 @@ int main(int argc, char** argv) {
         } else if (has_ext(input_path, {".parquet"})) {
             std::cerr << "Reading Parquet edges from: " << input_path << "\n";
             edges = read_parquet_edges(input_path);
+        } else if (has_ext(input_path, {".csr"})) {
+            std::cerr << "Reading CSR format from: " << input_path << "\n";
+            CSRGraph csr = read_csr_file(input_path);
+            std::cerr << "CSR: " << csr.n_vertices << " vertices, " << csr.n_edges << " edges\n";
+            edges = csr_to_edges(csr);
         } else {
             throw std::runtime_error("Unsupported input extension: " + input_path.extension().string());
         }
@@ -349,6 +504,30 @@ int main(int argc, char** argv) {
             jout << rc.first << '\t' << rc.second << '\n';
         }
         std::cerr << "Saved TSV to: " << out << "\n";
+
+        // ----- Generate CSR subgraphs for each cluster -----
+        std::cerr << "Generating CSR subgraphs for each cluster...\n";
+        
+        // Group vertices by cluster
+        std::vector<std::vector<igraph_integer_t>> cluster_vertices(nb_clusters);
+        for (igraph_integer_t i = 0; i < igraph_vcount(&G); ++i) {
+            int cid = VECTOR(membership)[i];
+            if (cid >= 0 && cid < nb_clusters) {
+                cluster_vertices[cid].push_back(i);
+            }
+        }
+        
+        // Write CSR file for each cluster
+        for (igraph_integer_t cid = 0; cid < nb_clusters; ++cid) {
+            if (cluster_vertices[cid].empty()) continue;
+            
+            std::string filename = "cluster_" + std::to_string(cid + 1) + ".csr"; // 1-indexed
+            fs::path csr_path = outdir / filename;
+            
+            write_csr_subgraph(csr_path, &G, cluster_vertices[cid], inv_map);
+        }
+        
+        std::cerr << "Saved " << nb_clusters << " cluster subgraphs in CSR format to: " << outdir << "\n";
 
         igraph_vector_int_destroy(&membership);
         igraph_destroy(&G);
