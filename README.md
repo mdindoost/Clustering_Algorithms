@@ -154,6 +154,11 @@ Example CSR file:
 # Original vertex IDs: 0 1 2 3 4
 ```
 
+**Cluster Subgraph Output:**
+- Cluster subgraphs are numbered starting from 1 (e.g., `cluster_1.csr`, `cluster_2.csr`)
+- This matches the 1-indexed cluster IDs in `leiden_results.tsv`
+- Each subgraph file includes a comment line with the original vertex IDs for reference
+
 Notes:
 - Default mode: **undirected**
 - Use `--directed` flag only if necessary (Leiden currently only supports undirected graphs)

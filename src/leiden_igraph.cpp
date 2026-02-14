@@ -151,15 +151,15 @@ static CSRGraph read_csr_file(const fs::path& path) {
     std::string line;
     
     // First line: number of vertices
-    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing vertex count");
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing number of vertices");
     long long n_vertices;
-    if (!parse_ll(line, n_vertices)) throw std::runtime_error("CSR file: invalid vertex count");
+    if (!parse_ll(line, n_vertices)) throw std::runtime_error("CSR file: invalid number of vertices");
     csr.n_vertices = n_vertices;
     
     // Second line: number of edges (non-zeros)
-    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing edge count");
+    if (!std::getline(fin, line)) throw std::runtime_error("CSR file: missing number of edges");
     long long n_edges;
-    if (!parse_ll(line, n_edges)) throw std::runtime_error("CSR file: invalid edge count");
+    if (!parse_ll(line, n_edges)) throw std::runtime_error("CSR file: invalid number of edges");
     csr.n_edges = n_edges;
     
     // Third line: row_ptr array (n_vertices+1 elements)
@@ -273,7 +273,7 @@ static void write_csr_subgraph(const fs::path& path, const igraph_t* g,
     }
     fout << '\n';
     
-    // Optional: Line 5: original vertex IDs mapping
+    // Line 5: original vertex IDs mapping (for reference)
     fout << "# Original vertex IDs: ";
     for (size_t i = 0; i < subgraph_vids.size(); ++i) {
         if (i > 0) fout << ' ';
