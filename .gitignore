@@ -12,6 +12,10 @@
 /*.tsv
 /*.json
 
+# Test files
+test_*
+*.csr
+
 # System/editor noise
 *.swp
 *.DS_Store

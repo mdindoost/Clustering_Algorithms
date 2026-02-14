@@ -121,19 +121,50 @@ cmake --build . --target leiden_clustering
 ./build/leiden_igraph edges.parquet . my_dataset modularity 1.0
 ```
 
+**CSR Input**
+```bash
+./build/leiden_igraph graph.csr . my_dataset cpm 0.5
+```
+
 Output:
 ```
 ./CPM/leiden_results.tsv   # (or ./modularity/)
+./CPM/cluster_1.csr        # Subgraph for cluster 1 in CSR format
+./CPM/cluster_2.csr        # Subgraph for cluster 2 in CSR format
+...
 ```
 
 **Format:**  
 Each line → `<node_id>	<cluster_id>`
 
+**CSR Format:**
+The CSR (Compressed Sparse Row) format represents a graph efficiently:
+- Line 1: Number of vertices (n)
+- Line 2: Number of edges (nnz)
+- Line 3: Row pointer array (n+1 space-separated integers)
+- Line 4: Column index array (nnz space-separated integers)
+- Line 5: Comment with original vertex IDs mapping
+
+Example CSR file:
+```
+5
+7
+0 2 4 6 7 7
+1 3 0 2 1 3 4
+# Original vertex IDs: 0 1 2 3 4
+```
+
+**Cluster Subgraph Output:**
+- Cluster subgraphs are numbered starting from 1 (e.g., `cluster_1.csr`, `cluster_2.csr`)
+- This matches the 1-indexed cluster IDs in `leiden_results.tsv`
+- Each subgraph file includes a comment line with the original vertex IDs for reference
+
 Notes:
 - Default mode: **undirected**
 - Use `--directed` flag only if necessary (Leiden currently only supports undirected graphs)
-- Supports both `.tsv`, `.csv`, and `.parquet` inputs
+- Supports `.tsv`, `.csv`, `.parquet`, and `.csr` inputs
 - Parquet reader automatically detects columns named `{src, source, u}` and `{dst, target, v}`
+- **NEW**: Each cluster's subgraph is automatically exported in CSR format
 
 ---
 
@@ -192,7 +223,7 @@ apptainer exec cluster-algorithm.sif /app/build/leiden_clustering -t cpm -r 0.5 
 | Implementation | Language | Input Types | Output Format | Dependencies | Notes |
 |----------------|-----------|--------------|----------------|--------------|-------|
 | **leiden_clustering** | C++ / libleidenalg | TSV | TSV | igraph + libleidenalg | Original implementation |
-| **leiden_igraph** | C++ (direct igraph + Arrow) | TSV / Parquet | TSV | igraph + Arrow/Parquet | New, fast, undirected default |
+| **leiden_igraph** | C++ (direct igraph + Arrow) | TSV / Parquet / CSR | TSV + CSR subgraphs | igraph + Arrow/Parquet | New, fast, undirected default, exports cluster subgraphs |
 
 ---
 
@@ -222,6 +253,32 @@ Expected output (cluster assignments will vary):
 3   0
 4   0
 ```
+
+### CSR Format Test
+
+To test CSR input format:
+
+```bash
+# Create a CSR format file
+cat > graph.csr << 'EOF'
+5
+7
+0 2 4 6 7 7
+1 3 0 2 1 3 4
+EOF
+
+# Run clustering with CSR input
+./build/leiden_igraph graph.csr . modularity 1.0
+
+# Check the results
+cat modularity/leiden_results.tsv
+ls -la modularity/cluster_*.csr
+```
+
+This will produce:
+- `modularity/leiden_results.tsv` - Node assignments to clusters
+- `modularity/cluster_1.csr`, `modularity/cluster_2.csr`, etc. - Subgraphs for each cluster in CSR format
+
 ## Rebuild and run
 ```bash
 
