@@ -10,10 +10,10 @@ set(CMAKE_FIND_PACKAGE_PREFER_CONFIG ON)
 
 # Global include/link paths for your vendored tree
 include_directories(${CMAKE_SOURCE_DIR}/external/install/include)
-link_directories(${CMAKE_SOURCE_DIR}/external/install/lib64)
+link_directories(${CMAKE_SOURCE_DIR}/external/install/lib)
 
 # RPATH so binaries can find vendored shared libs
-set(CMAKE_INSTALL_RPATH "$ORIGIN/../external/install/lib64")
+set(CMAKE_INSTALL_RPATH "$ORIGIN/../external/install/lib")
 set(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
@@ -42,12 +42,12 @@ find_package(Parquet CONFIG QUIET)
 # If imported targets don't exist, fall back to raw libs
 if(NOT TARGET Arrow::arrow)
   message(WARNING "Arrow::arrow target not found; falling back to find_library()")
-  find_library(ARROW_LIB NAMES arrow libarrow PATHS "${CMAKE_SOURCE_DIR}/external/install/lib64" REQUIRED)
+  find_library(ARROW_LIB NAMES arrow libarrow PATHS "${CMAKE_SOURCE_DIR}/external/install/lib" REQUIRED)
 endif()
 
 if(NOT TARGET Parquet::parquet)
   message(WARNING "Parquet::parquet target not found; falling back to find_library()")
-  find_library(PARQUET_LIB NAMES parquet libparquet PATHS "${CMAKE_SOURCE_DIR}/external/install/lib64" REQUIRED)
+  find_library(PARQUET_LIB NAMES parquet libparquet PATHS "${CMAKE_SOURCE_DIR}/external/install/lib" REQUIRED)
 endif()
 
 add_executable(leiden_igraph src/leiden_igraph.cpp)
